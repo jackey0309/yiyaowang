@@ -2,7 +2,7 @@ import App from '../App'
 // webpack中利用require.ensure()实现按需加载
 const home = r => require.ensure([], () => r(require('../page/home/home')), 'home')
 const city = r => require.ensure([], () => r(require('../page/city/city')), 'city')
-
+const cart = r => require.ensure([], () => r(require('../page/cart/cart')), 'city')
 
 
 export default [{
@@ -23,6 +23,11 @@ export default [{
         {
             path: '/city',
             component: city
+        },
+        //购物车列表页
+        {
+            path: '/cart',
+            component: cart
         },
        ]
     }]

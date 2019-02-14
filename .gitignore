@@ -8,5 +8,5 @@ package-lock.json
 .vscode
 tree.md
 *.idea
+notes.md
 
-elm/
