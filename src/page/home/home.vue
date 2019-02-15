@@ -2,16 +2,19 @@
     <div id="home" class="pre-home page">
          <div class="header_cover" style="opacity: 0; transition: all 0.5s ease 0s;"></div>
        <head-top></head-top>
+       <foot-guide></foot-guide>   
     </div>
 </template>
 
 <script>
 import headTop from '../../components/header/head'
+import footGuide from '../../components/footer/footGuide'
 
 
 export default {
     components:{
-        headTop
+        headTop,
+        footGuide
     },
 }
 </script>
@@ -36,6 +39,7 @@ export default {
         width: 100%;
         line-height: 1.2rem;
     }
+    
 </style>
 
 

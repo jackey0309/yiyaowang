@@ -55,7 +55,6 @@ export default {
     },
     mounted(){
         this.scroll = new Bscroll(this.$refs.wrapper)
-        console.log(this.scroll)
   }
 }
 </script>
