@@ -20,6 +20,7 @@
 
 <style lang="scss">
   	@import './style/common';
+	@import '../node_modules/mint-ui/lib/style.css';
 	.router-fade-enter-active, .router-fade-leave-active {
 	  	transition: opacity .3s;
 	}
