@@ -17,26 +17,31 @@ export default [{
         //首页城市列表页
         {
             path: '/home',
+            name: 'home',
             component: home
         },
         //城市列表页
         {
             path: '/city',
+            name: 'city',
             component: city
         },
         //购物车列表页
         {
             path: '/cart',
+            name: 'cart',
             component: cart
         },
         //找药列表页
         {
             path: '/category',
+            name: 'category',
             component: category
         },
         //我的列表页
         {
             path: '/personalcenter',
+            name: 'personalcenter',
             component: personalcenter
         },
        ]
