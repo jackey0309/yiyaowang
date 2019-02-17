@@ -3,7 +3,7 @@
         <header class="header">
             <div class="header-searchBar">
                 <div class="logo"></div>
-                <div class="address_map ellipsis" >{{guessCity}}</div>
+                <div class="address_map ellipsis" >上海</div>
                 <div class="searchbar">
                     <a href="http://m.111.com.cn/yyw/wap/searchList/#/search" class="search_box">
                         <i class="icon iconfont icon-sousuo"></i>
