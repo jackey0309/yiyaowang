@@ -24,13 +24,11 @@ a {
 .mt10 {
     margin-top: .26666667rem
 }
-* {
-    text-align: left
-}
 
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-touch-callout: none
+    -webkit-touch-callout: none;
+    box-sizing: border-box;
 }
 
 

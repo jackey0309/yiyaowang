@@ -82,7 +82,122 @@
                 </li>
             </ul>
             <div class="categories_box">
-
+                <mt-swipe :stopPropagation="true" :prevent="true" :auto="5000"  class="categories_box_banner">
+                <mt-swipe-item>
+                <a href="http://yzm.111.com.cn/m/yw-twwz/index.html?channel=yiyaoapp">
+                    <img src="https://p1.maiyaole.com/img/mobile/20185/1528081076647125.jpg" alt="">
+                    </a>
+                </mt-swipe-item>
+                <mt-swipe-item>
+                <a href="https://m.111.com.cn/yyw/wap/vip/#/index?forceRemote=1">
+                    <img src=" https://p1.maiyaole.com/img/mobile/20187/1533090054718241.png" alt="">
+                </a>
+                </mt-swipe-item> 
+            </mt-swipe>
+                <div class="categories_box_innner">
+                    <div>
+                        <h3>热门类目</h3>
+                        <ul>
+                            <li>
+                                <a href="javascript:;">
+                                    <div class="categories_img default_pic">
+                                        <img src="https://p4.maiyaole.com/img/category/201710/1507438025375.png?35491" alt="">
+                                    </div>
+                                    <span>感冒</span>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="javascript:;">
+                                    <div class="categories_img default_pic">
+                                        <img src="https://p4.maiyaole.com/img/category/201710/1507438025375.png?35491" alt="">
+                                    </div>
+                                    <span>感冒</span>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="javascript:;">
+                                    <div class="categories_img default_pic">
+                                        <img src="https://p4.maiyaole.com/img/category/201710/1507438025375.png?35491" alt="">
+                                    </div>
+                                    <span>感冒</span>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="javascript:;">
+                                    <div class="categories_img default_pic">
+                                        <img src="https://p4.maiyaole.com/img/category/201710/1507438025375.png?35491" alt="">
+                                    </div>
+                                    <span>感冒</span>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="javascript:;">
+                                    <div class="categories_img default_pic">
+                                        <img src="https://p4.maiyaole.com/img/category/201710/1507438025375.png?35491" alt="">
+                                    </div>
+                                    <span>感冒</span>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="javascript:;">
+                                    <div class="categories_img default_pic">
+                                        <img src="https://p4.maiyaole.com/img/category/201710/1507438025375.png?35491" alt="">
+                                    </div>
+                                    <span>感冒</span>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="javascript:;">
+                                    <div class="categories_img default_pic">
+                                        <img src="https://p4.maiyaole.com/img/category/201710/1507438025375.png?35491" alt="">
+                                    </div>
+                                    <span>感冒</span>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="javascript:;">
+                                    <div class="categories_img default_pic">
+                                        <img src="https://p4.maiyaole.com/img/category/201710/1507438025375.png?35491" alt="">
+                                    </div>
+                                    <span>感冒</span>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="javascript:;">
+                                    <div class="categories_img default_pic">
+                                        <img src="https://p4.maiyaole.com/img/category/201710/1507438025375.png?35491" alt="">
+                                    </div>
+                                    <span>感冒</span>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="javascript:;">
+                                    <div class="categories_img default_pic">
+                                        <img src="https://p4.maiyaole.com/img/category/201710/1507438025375.png?35491" alt="">
+                                    </div>
+                                    <span>感冒</span>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="javascript:;">
+                                    <div class="categories_img default_pic">
+                                        <img src="https://p4.maiyaole.com/img/category/201710/1507438025375.png?35491" alt="">
+                                    </div>
+                                    <span>感冒</span>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="javascript:;">
+                                    <div class="categories_img default_pic">
+                                        <img src="https://p4.maiyaole.com/img/category/201710/1507438025375.png?35491" alt="">
+                                    </div>
+                                    <span>感冒</span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <foot-guide></foot-guide>  
@@ -254,7 +369,68 @@ export default {
     display: block;
     overflow: hidden;
 }
-
+.categories_content .categories_box .categories_box_banner {
+    padding: .26666666666666666rem .26666666666666666rem 0 0;
+    height: 2rem;
+}
+.categories_content .categories_box .categories_box_innner {
+    padding-bottom: 2.3466666666666667rem;
+}
+.categories_content .categories_box .categories_box_banner img {
+    width: 100%;
+    height: 2rem;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.categories_content .categories_box h3 {
+    color: #333;
+    height: 1.0666666666666667rem;
+    line-height: 1.0666666666666667rem;
+    font-size: .4266666666666667rem;
+    padding: 0;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.categories_content .categories_box ul {
+    overflow: hidden;
+    background: #fff;
+    padding: .5333333333333333rem .26666666666666666rem 0 0;
+    font-size: .32rem;
+}
+.categories_content .categories_box ul {
+    overflow: hidden;
+    background: #fff;
+    padding: .5333333333333333rem .26666666666666666rem 0 0;
+    font-size: .32rem;
+}
+.categories_content .categories_box li {
+    float: left;
+    width: 33.33333%;
+    height: 2.3466666666666667rem;
+    text-align: center;
+    margin-bottom: .4rem;
+    display: block;
+}
+.categories_content .categories_box li a {
+    display: block;
+    color: #555;
+}
+.categories_content .categories_box li .categories_img {
+    width: 1.5466666666666666rem;
+    height: 1.5466666666666666rem;
+    margin: 0 auto .26666666666666666rem;
+    overflow: hidden;
+}
+.categories_content .categories_box li img {
+    width: 1.5466666666666666rem;
+    height: 1.5466666666666666rem;
+    border-radius: 50%;
+}
+.categories_content .categories_box li span {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 
 /*categories_content*/
 

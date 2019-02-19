@@ -11,9 +11,8 @@
                             <i class="icon iconfont icon-sousuo"></i>
                             输入商品名称
                         </a>
-                        <a href="tel:4000070958" class="tel"></a>
                     </div>
-                    <div class="tel"></div>
+                    <a href="tel:4000070958" class="tel"></a>   
                 </div>
             </header>
        </head-top>
@@ -985,6 +984,7 @@ export default {
         line-height: .53333333rem;
         font-size: .37333333rem;
         color: #fff;
+        text-align: left;
     }
     .header .logo , .header .address_map{
         position: absolute;
@@ -1030,9 +1030,8 @@ export default {
         padding-left: .26666667rem;
         background: url(../../images/tel.png) no-repeat .05333333rem;
         background-size: 1.22666667rem auto;
+        box-sizing:content-box;
     }
-
-
  /* header */
  /* swipe */
   .banner {
@@ -1410,7 +1409,6 @@ content .grab_together .grab_top p .grab_time_left {
     font-size: .29333333rem;
     text-align: center;
 }
-
 </style>
 
 
