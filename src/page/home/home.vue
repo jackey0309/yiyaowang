@@ -970,6 +970,7 @@ export default {
     }
      .header-searchBar{
         position: relative;
+        text-align: left;
     }
     .header .logo{
         background: url(../../images/logo.png) no-repeat .4rem;
@@ -984,7 +985,6 @@ export default {
         line-height: .53333333rem;
         font-size: .37333333rem;
         color: #fff;
-        text-align: left;
     }
     .header .logo , .header .address_map{
         position: absolute;
@@ -1010,7 +1010,6 @@ export default {
             background: hsla(0,0%,100%,.9);   
             border-radius: 10px;
             color: #898989;
-            box-sizing: border-box;
             display: block;
             width: 100%;
         }
@@ -1030,7 +1029,7 @@ export default {
         padding-left: .26666667rem;
         background: url(../../images/tel.png) no-repeat .05333333rem;
         background-size: 1.22666667rem auto;
-        box-sizing:content-box;
+        box-sizing: content-box;
     }
  /* header */
  /* swipe */
@@ -1157,6 +1156,16 @@ img {
     height: .45333333rem;
     transform: translateY(-50%);
     overflow: hidden;
+}
+.content .news_model a {
+    height: .45333333rem;
+    line-height: .45333333rem;
+    color: #4a4a4a;
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 /* news_model */
 /* grab_together */
