@@ -1,18 +1,13 @@
 <template>
     <div id="main" class="user_page">
         <!-- user_top -->
-        <div class="user_top">
-            <head-top :head-title="profiletitle">
-                <header slot="header">
-                    <span class="city_area"> 
+            <head-top id="user_top">
+                    <span slot="city_area" class="city_area"> 
                         <img src="../../images/city_area.png" alt="定位">
                         湖北
                     </span>
-                    <span>
-                    </span>
-                </header>
+                    <span slot="setting_area" class="setting_area">设置</span>
             </head-top>
-        </div>
         <!-- user_info_wrapper -->
         <div class="user_info_wrapper">
             <div class="user_info_content">
@@ -147,11 +142,6 @@
 import headTop from '../../components/header/head'
 import footGuide from '../../components/footer/footGuide'
 export default {
-    data(){
-        return{
-            profiletitle: '设置',
-        }
-    },
       components:{
         headTop,
         footGuide
@@ -165,29 +155,36 @@ export default {
     padding-bottom: 2.66666667rem;
     background-color: #fff;
     height: 100%;
+    /*user_top*/
+    #user_top {
+        height: 3.14666667rem;
+        background: -webkit-gradient(linear,left top,left bottom,from(#908bff),to(#9bb3ff));
+        background: linear-gradient(#908bff,#9bb3ff);
+        text-align: center;
+        .city_area {
+            left: .4rem;
+            }
+        .city_area {
+            position: absolute;
+            top: .74666667rem;
+            color: #fff;
+            font-size: .4rem;
+        }
+        .city_area img {
+            width: .4rem;
+            height: .48rem;
+        }
+        .setting_area {
+            right: .4rem;
+        }
+        .setting_area {
+            position: absolute;
+            top: .74666667rem;
+            color: #fff;
+            font-size: .4rem;
+        }
+    }
 }
-/*user_top*/
-.user_page .user_top {
-    height: 3.14666667rem;
-    background: -webkit-gradient(linear,left top,left bottom,from(#908bff),to(#9bb3ff));
-    background: linear-gradient(#908bff,#9bb3ff);
-    text-align: center;
-}
-
-.user_page .user_top .city_area {
-    left: .4rem;
-}
-.user_page .user_top .city_area {
-    position: absolute;
-    top: .74666667rem;
-    color: #fff;
-    font-size: .4rem;
-}
-.user_page .user_top .city_area img {
-    width: .4rem;
-    height: .48rem;
-}
-
 /*user_info_wrapper*/
 .user_page .user_info_wrapper {
     display: -webkit-box;

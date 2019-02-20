@@ -5,6 +5,7 @@ const city = r => require.ensure([], () => r(require('../page/city/city')), 'cit
 const cart = r => require.ensure([], () => r(require('../page/cart/cart')), 'cart')
 const category = r => require.ensure([], () => r(require('../page/category/category')), 'category')
 const personalcenter = r => require.ensure([], () => r(require('../page/personalcenter/personalcenter')), 'personalcenter')
+const item = r => require.ensure([], () => r(require('../page/item/item')), 'item')
 export default [{
     path: '/',
     component: App, //顶层路由，对应index.html
@@ -43,6 +44,12 @@ export default [{
             path: '/personalcenter',
             name: 'personalcenter',
             component: personalcenter
+        },
+        //我的列表页
+        {
+            path: '/item',
+            name: 'item',
+            component: item
         },
        ]
     }]

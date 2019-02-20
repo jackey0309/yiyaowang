@@ -1,11 +1,7 @@
 <template>
    <div id="cartDemand">
-        <head-top goBack="true">
-            <header slot="header" id="cartDemandHeader" class="cart_common_header">
-                <a href="" class="common_left_btn" @click="$router.go(-1)">
-                    <i class=" icon iconfont icon-fanhui "></i>
-                </a>
-                <ul class="common_tt_tab ">
+        <head-top id="cartDemandHeader" class="cart_common_header" goBack="true" commonMore="true">
+                <ul slot="cart_tab " class="common_tt_tab ">
                     <li class="cur">
                         <a href="">购物车</a>
                     </li>
@@ -13,12 +9,6 @@
                         <a href="">需求清单</a>
                     </li>
                 </ul> 
-                <div class="common_right_btn">
-                    <span>
-                        <i class="icon iconfont icon-points"></i>
-                    </span>
-                </div> 
-            </header>
         </head-top>
        <div id="cart">
            <div class="page" style>
@@ -212,7 +202,7 @@
                                        <p class="pro_name">三九/999 感冒灵颗粒 10g*9袋</p>
                                        <span class="price">¥12.30</span>
                                    </li>
-                                   
+
                                    
                                </ul>
                            </div>
@@ -230,18 +220,18 @@
 import headTop from '../../components/header/head'
 
 export default {
-    conponents:{
-        headTop,
+    components:{
+        headTop
     }
 }
 </script>
 
 <style lang="scss" scoped>
     @import '../../style/mixin';
-    * {
-        box-sizing: content-box;
-    }
 /*cart_common_header*/
+    .page-navbar{
+            height: 1.1821875rem;
+        }
     .cart_common_header {
         position: fixed;
         top: 0;
@@ -255,21 +245,6 @@ export default {
         background: #F9F9F9;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         z-index: 9999;
-    }
-    .cart_common_header .common_left_btn {
-        position: absolute;
-        top: 0;
-        left: 0.21333333rem;
-        padding-left: 0.21333333rem;
-        height: 100%;
-        color: #999;
-    }
-    .cart_common_header.iconfont {
-        font-size: 0.53333333rem;
-        color: #666;
-        }
-    .page-navbar{
-        height: 1.1821875rem;
     }
     .cart_common_header .common_tt_tab {
         font-size: 0.42666667rem;
@@ -285,21 +260,6 @@ export default {
         min-width: 1.6rem;
         padding: 0 0.26666667rem;
         cursor: pointer;
-    }
-    .cart_common_header .common_right_btn {
-        position: absolute;
-        top: 0;
-        right: 0.4rem;
-        color: #999;
-    }
-    .cart_common_header .common_right_btn a, .cart_common_header .common_right_btn span{
-        margin-left: 0.26666667rem;
-        color: #999;
-        float: right;
-    }
-    .cart_common_header .iconfont {
-        font-size: 0.53333333rem;
-        color: #666;
     }
     /*cart*/
     .page {
@@ -327,6 +287,7 @@ export default {
                 z-index: 5;
                 left: 50%;
                 margin-left: -0.48rem;
+                color: #ccc;
             }
         }
         .cart_ico:after {
@@ -358,7 +319,7 @@ export default {
     }
     .cart_other {
         background: #fff;
-        margin-top: 0.26666667rem;
+        margin-bottom: 0.26666667rem;
         .other_tt {
             height: 1.17333333rem;
             border-bottom: 1px solid #eee;

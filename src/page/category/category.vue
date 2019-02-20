@@ -2,25 +2,23 @@
     <div class="page_categories">
         <div class="categories">
             <!-- header_bar -->
-        <head-top>
-            <header slot="header" class="categories_header_bar">
-                <div class="categories_header_con">
-                    <a href="javascript:void(0)" class="categories_header_left_btn">
-                        <i class="logo"></i>
-                    </a>
-                    <span class="address_map">上海</span>
-                    <div class="categories_header_search">
-                        <div class="search_box">
-                            <i class="icon iconfont icon-sousuo"></i>
-                            输入商品名称
+            <head-top id="categories_header_bar">
+                    <div slot="header-searchBar" class="categories_header_con">
+                        <a href="javascript:void(0)" class="categories_header_left_btn">
+                            <i class="logo"></i>
+                        </a>
+                        <span class="address_map">上海</span>
+                        <div class="categories_header_search">
+                            <div class="search_box">
+                                <i class="icon iconfont icon-sousuo"></i>
+                                输入商品名称
+                            </div>
                         </div>
+                        <a href="" class="categories_header_right_btn">
+                            <i class="tel"></i>
+                        </a>
                     </div>
-                    <a href="" class="categories_header_right_btn">
-                        <i class="tel"></i>
-                    </a>
-                </div>
-            </header>
-        </head-top>
+            </head-top>
         <!-- categories_banner -->
         <div class="categories_banner">
             <a href="https://yzm.111.com.cn/m/yw-twwz/index.html?channel=yiyaoapp">
@@ -218,6 +216,9 @@ export default {
 
 <style lang="scss" scoped>
  @import '../../style/mixin';
+ * {
+      box-sizing: border-box;
+ }
  .categories, .page_categories {
     height: 100%;
     overflow: hidden;
@@ -228,91 +229,90 @@ export default {
     padding-top: 1.1733333333333333rem;
 }
 /*header_bar*/
-.categories_header_bar {
+#categories_header_bar {
     height: 1.1733333333333333rem;
     background: #f9f9f9;
     border: 1px solid #e7e7e7;
-    box-sizing: border-box;
     position: fixed;
     width: 100%;
     z-index: 100;
     left: 0;
     top: 0;
     text-align: center;
-}
-.categories_header_bar .categories_header_con {
-    position: relative;
-    padding: 0 1.3333333333333333rem 0 3.2rem;
-    height: 1.1733333333333333rem;
-}
-.categories_header_bar .categories_header_con .categories_header_left_btn {
-    padding: 0 .4rem;
-    height: 1.1733333333333333rem;
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    line-height: 1.1733333333333333rem;
-}
-.categories_header_bar .categories_header_con .logo {
-    margin-top: .21333333333333335rem;
-    width: .6666666666666666rem;
-    height: .7466666666666667rem;
-    background: url(../../images/logo.png) no-repeat;
-    display: block;
-    background-size: .6666666666666666rem auto;
-}
-.categories_header_bar .categories_header_con .address_map {
-    position: absolute;
-    line-height: 1.1733333333333333rem;
-    left: 1.3333333333333333rem;
-    top: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 1.2rem;
-}
-.categories_header_bar .categories_header_con .categories_header_search {
-    position: absolute;
-    right: 1.6rem;
-    left: 2.6666666666666665rem;
-}
-.categories_header_bar .categories_header_con .categories_header_right_btn {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 1.1733333333333333rem;
-    line-height: 1.1733333333333333rem;
-    display: inline-block;
-    padding: 0 .26666666666666666rem;
-    cursor: pointer;
-}
-.categories_header_bar .categories_header_con .categories_header_search .search_box {
-    height: .6666666666666666rem;
-    line-height: .6666666666666666rem;
-    margin-top: .26666666666666666rem;
-    font-size: .32rem;
-    padding: 0 .26666666666666666rem;
-    text-align: left;
-    border-radius: 10px;
-    background: #ebebeb;
-    color: #b8b8be;
-    cursor: text;
-}
-.categories_header_bar .categories_header_con .categories_header_search .iconfont {
-    font-size: .4rem;
-    color: #b8b8be;
-    margin-right: .16rem;
-}
-.categories_header_bar .categories_header_con .tel {
-    width: 1.2rem;
-    height: .6666666666666666rem;
-    line-height: .6666666666666666rem;
-    margin-top: .21333333333333335rem;
-    display: block;
-    background: url(../../images/tel-category.png) no-repeat;
-    background-size: 1.2rem auto;
-    background-position: 0;
+    .categories_header_con {
+        position: relative;
+        padding: 0 1.3333333333333333rem 0 3.2rem;
+        height: 1.1733333333333333rem;
+        .categories_header_left_btn {
+            padding: 0 .4rem;
+            height: 1.1733333333333333rem;
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            line-height: 1.1733333333333333rem;
+        }
+        .logo {
+            margin-top: .21333333333333335rem;
+            width: .6666666666666666rem;
+            height: .7466666666666667rem;
+            background: url(../../images/logo.png) no-repeat;
+            display: block;
+            background-size: .6666666666666666rem auto;
+        }
+         .address_map {
+            position: absolute;
+            line-height: 1.1733333333333333rem;
+            left: 1.3333333333333333rem;
+            top: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 1.2rem;
+        }
+        .categories_header_search {
+            position: absolute;
+            right: 1.6rem;
+            left: 2.6666666666666665rem;
+        }
+        .categories_header_right_btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 1.1733333333333333rem;
+            line-height: 1.1733333333333333rem;
+            display: inline-block;
+            padding: 0 .26666666666666666rem;
+            cursor: pointer;
+        }
+        .categories_header_search .search_box {
+            height: .6666666666666666rem;
+            line-height: .6666666666666666rem;
+            margin-top: .26666666666666666rem;
+            font-size: .32rem;
+            padding: 0 .26666666666666666rem;
+            text-align: left;
+            border-radius: 10px;
+            background: #ebebeb;
+            color: #b8b8be;
+            cursor: text;
+        }
+        .categories_header_search .iconfont {
+            font-size: .4rem;
+            color: #b8b8be;
+            margin-right: .16rem;
+        }
+        .tel {
+            width: 1.2rem;
+            height: .6666666666666666rem;
+            line-height: .6666666666666666rem;
+            margin-top: .21333333333333335rem;
+            display: block;
+            background: url(../../images/tel-category.png) no-repeat;
+            background-size: 1.2rem auto;
+            background-position: 0;
+        }
+    }
 }
 /*header_bar*/
 /*categories_banner*/

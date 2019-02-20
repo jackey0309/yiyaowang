@@ -1,9 +1,8 @@
 <template>
     <div id="home" class="pre-home page">
          <div class="header_cover" style="opacity: 0; transition: all 0.5s ease 0s;"></div>
-       <head-top>
-            <header slot="header" class="header">
-                <div class="header-searchBar">
+       <head-top id="header">
+                <div slot="header-searchBar" class="header-searchBar">
                     <div class="logo"></div>
                     <div class="address_map ellipsis" >上海</div>
                     <div class="searchbar">
@@ -12,9 +11,8 @@
                             输入商品名称
                         </a>
                     </div>
-                    <a href="tel:4000070958" class="tel"></a>   
+                    <a href="tel:4000070958" class="tel"></a> 
                 </div>
-            </header>
        </head-top>
         <div class="content">
                 <!-- swipe -->
@@ -956,11 +954,11 @@ export default {
         line-height: 1.2rem;
     }
    /* header */
-   .header{
+   #header{
         font-size: .4rem;
         text-align: center;
     }
-    .header{
+    #header{
         position: fixed;
         top: 0;
         left: 0;
@@ -968,17 +966,17 @@ export default {
         width: 100%;
         line-height: 1.2rem;
     }
-     .header-searchBar{
+    .header-searchBar{
         position: relative;
         text-align: left;
     }
-    .header .logo{
+    #header .logo{
         background: url(../../images/logo.png) no-repeat .4rem;
         left: 0;
         width: 1.33333333rem;
         background-size: auto .74666667rem; 
         }
-    .header .address_map{
+    #header .address_map{
         left: 1.2rem;
         padding-top: .10666667rem;
         width: 1.2rem;
@@ -986,13 +984,13 @@ export default {
         font-size: .37333333rem;
         color: #fff;
     }
-    .header .logo , .header .address_map{
+    #header .logo , #header .address_map{
         position: absolute;
         top: 0;
         height: .64rem;
         display: block;
     }
-    .header .searchbar{
+    #header .searchbar{
         padding: 0 1.73333333rem 0 2.4rem;
         color: #a7a7a7;
         .search_box{
@@ -1012,14 +1010,16 @@ export default {
             color: #898989;
             display: block;
             width: 100%;
+            box-sizing: border-box;
+            text-align: left;
         }
        .iconfont {
             font-size: .42666667rem;
-            margin-right: .16rem;
+            margin-right: .02rem;
             color: #898989;
             } 
     }
-    .header .tel {
+    #header .tel {
         position: absolute;
         top: 0;
         right: 0;
@@ -1029,7 +1029,6 @@ export default {
         padding-left: .26666667rem;
         background: url(../../images/tel.png) no-repeat .05333333rem;
         background-size: 1.22666667rem auto;
-        box-sizing: content-box;
     }
  /* header */
  /* swipe */
@@ -1187,7 +1186,7 @@ img {
     height: 1.30666667rem;
     line-height: 1.30666667rem;
 }
-content .grab_together .grab_top p .grab_time_left {
+.content .grab_together .grab_top p .grab_time_left {
     position: relative;
     color: #929292;
 }

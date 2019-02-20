@@ -69,7 +69,7 @@ export default {
     bottom: 0;
  }
  .content{
-     height: 55.1rem;
+     height: 54rem;
  }
 .province_group{
     font-size: .37333333rem;
