@@ -4,8 +4,7 @@
         <section class=" ellipsis" v-if="headTitle">
             <span class="setting_area">{{headTitle}}</span>
         </section>
-    </div>
-        
+    </div>  
 </template>
 
 <script>
@@ -25,6 +24,7 @@ export default {
     color: #fff;
     font-size: .4rem;
 }
+
 </style>
 
 
