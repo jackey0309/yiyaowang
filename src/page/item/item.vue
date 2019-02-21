@@ -15,7 +15,7 @@
                     <div class>
                         <div class="srcoll_img">
                             <!-- swipe -->
-                            <mt-swipe :stopPropagation="true" :prevent="true" :auto="5000" class="banner">
+                            <mt-swipe :stopPropagation="true" :prevent="true" :auto="0" class="banner">
                                 <mt-swipe-item>
                                 <a href="">
                                     <img src="https://p4.maiyaole.com/img/item/201806/05/org_20180605174718138.jpg" alt="">
@@ -107,16 +107,533 @@
                             </li>
                         </ul>
                     </div>
-                    <!-- pro_appraise -->
-                    <div class="pro_appraise">
-                        <div class="pro_block">
-                            <div class="pro_item">
-                                <img src="../../images/pro_item.png">
-                                药师点评
+                </div>
+                <!-- pro_appraise -->
+                <div class="pro_appraise">
+                    <div class="pro_block">
+                        <div class="pro_item">
+                            <img src="../../images/pro_item.png">
+                            药师点评
+                        </div>
+                    </div>
+                    <p class="pro_appraise_text">暂无</p>
+                    <i class="icon iconfont icon-bottomarrow"></i>
+                </div>
+                <!-- pro_part -->
+                <div class="pro_part" style>
+                    <div class="pro_total">
+                        <p class="pro_total_price">
+                            合计：
+                            <span>¥ 31.80</span>
+                        </p>
+                        <p class="pro_original_price">
+                            原价：
+                            <span>¥ 32.80</span>
+                        </p>
+                        <div class="btn_default btn_red">加入购物车</div>
+                    </div>
+                </div>
+                <!-- pro_list mt5 -->
+                <div class="pro_list mt5">
+                    <div class="pro_block">
+                        <div class="pro_item">
+                            <span class="color_gray">已选：</span>
+                            规格:20g
+                        </div>
+                        <i class="icon iconfont icon-rightarrow"></i>
+                    </div>
+                </div>
+                <!-- pro_part -->
+                <div class="pro_part">
+                    <div style class="send_to">送至：
+                        <i class="icon iconfont icon-address"></i>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <p>预计送达时间暂时无法预估</p>
+                    </div>
+                </div>
+                <!-- pro_review -->
+                <div class="pro_review">
+                    <div class="pro_block">
+                        <div class="pro_item color_red">
+                            <span>商品评价</span>
+                        </div>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                <p>对商品非常满意</p>
+                                <p>
+                                    <span>on_***</span>
+                                    <i>|</i>
+                                    <span>2019-02-21 10:43:24</span>
+                                    <span class="pro_review_star">
+                                        <span class="real_star stars_width5"></span>
+                                    </span>
+                                </p>                            
+                            </li>
+                             <li>
+                                <p>对商品非常满意</p>
+                                <p>
+                                    <span>on_***</span>
+                                    <i>|</i>
+                                    <span>2019-02-21 10:43:24</span>
+                                    <span class="pro_review_star">
+                                        <span class="real_star stars_width5"></span>
+                                    </span>
+                                </p>                            
+                            </li>
+                        </ul>
+                        <div class="btn_more">
+                                查看
+                            <span>2288</span>
+                            条评价
+                            <i class="icon iconfont icon-rightarrow" style="font-size: 0.3rem;"></i>
+                        </div>
+                    </div>
+                </div>
+                <div style>
+                    <div class="pro_sider_tab">
+                        <div class="pro_sider_item active">
+                            看了又看
+                        </div>
+                        <div class="pro_sider_item">品牌专区</div>
+                    </div>
+                    <div class="pro_tab_box">
+                        <ul class="list_ul" style>
+                             <mt-swipe :stopPropagation="true" :prevent="true" :auto="0" style="height: 356px;" class="swipe">
+                                <mt-swipe-item>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+
+                                </mt-swipe-item>
+                                 <mt-swipe-item>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+
+                                </mt-swipe-item>
+                                 <mt-swipe-item>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+
+                                </mt-swipe-item>
+                                 <mt-swipe-item>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+
+                                </mt-swipe-item>
+                                 <mt-swipe-item>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+
+                                </mt-swipe-item>
+                                 <mt-swipe-item>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+
+                                </mt-swipe-item>
+                                 <mt-swipe-item>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                    <li class="li">
+                                        <a href="javascript:void(0)">
+                                            <div class="img_box">
+                                                <img src="https://p3.maiyaole.com/img/item/201806/07/200_20180607143901234.jpg" lazy="loaded">
+                                            </div>
+                                            <p class="pro_name">马应龙 麝香痔疮膏 10g</p>
+                                            <span class="price">¥9.3</span>
+                                        </a>
+                                    </li>
+                                </mt-swipe-item>
+                            </mt-swipe>
+                        </ul>
+                    </div>
+                    <!-- pro_notice -->
+                    <div style="overflow: hidden;">
+                        <div class="pro_notice">
+                            <span>继续上滑，加载图文详情</span>
+                        </div>
+                        <div class="pro_detail">
+                            <div class="pro_detail_tab">
+                                <div class="pro_detail_item active">图文详情</div>
+                                <div class="pro_detail_item">说明书</div>
+                                <div class="pro_detail_item">规格参数</div>
+                            </div>
+                            <div class="pro_detail_box">
+                                <div class="detail_img">
+                                    <p>
+                                        <img src="https://p1.maiyaole.com/img/201604/29/20160429104001369.jpg" title="10.jpg" hspace="0" border="0" vspace="0">
+                                        <br>
+                                    </p>
+                                    <p>
+                                        <img title="2图片?±?" src="https://p1.maiyaole.com/img/201312/25/20131225141759413.jpg" >
+                                    </p>
+                                    <p>
+                                        <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" border="0">
+                                        <img src="https://p1.maiyaole.com/img/201503/10/330_20150310174213305.jpg" border="0">
+                                        <img src="https://p1.maiyaole.com/img/201503/10/330_20150310174206613.jpg" border="0">" border="0">
+                                        <img src="https://p1.maiyaole.com/img/201503/10/330_20150310174345346.jpg?a=2102299043" border="0">
+                                        <img src="https://p4.maiyaole.com/img/item/201806/05/org_20180605174720346.jpg" border="0">
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <p class="pro_appraise_text">暂无</p>
-                        <i class="icon iconfont icon-bottomarrow"></i>
                     </div>
                 </div>
             </div>
@@ -233,32 +750,29 @@ export default {
                 color: #808080;
                 font-size: 0.37333333rem;
                 line-height: 0.53333333rem;
+                 i {
+                    color: #999;
+                    }
+                    span {
+                        color: #3987F4;
+                        padding: 0 0.13333333rem;
+                    }
+            }
+            .pro_label{
+                padding: 0 0.4rem 0.26666667rem 0;
+                border-bottom: 1px solid #e1e1e1;
+                span {
+                    color: #676767;
+                    font-size: 0.34666667rem;
+                    background: url(../../images/pro_label.png) no-repeat left center;
+                    background-size: 0.42666667rem auto;
+                    padding-left: 0.53333333rem;
+                    margin-right: 0.53333333rem;
+                }
             }
         }
-    } 
-    .pro_content .pro_part 
-        p {
-            word-break: break-all;
-        }
-        i {
-        color: #999;
-        }
-        span {
-            color: #3987F4;
-            padding: 0 0.13333333rem;
-        }
-        .pro_label{
-            padding: 0 0.4rem 0.26666667rem 0;
-            border-bottom: 1px solid #e1e1e1;
-            span {
-                color: #676767;
-                font-size: 0.34666667rem;
-                background: url(../../images/pro_label.png) no-repeat left center;
-                background-size: 0.42666667rem auto;
-                padding-left: 0.53333333rem;
-                margin-right: 0.53333333rem;
-            }
-        }
+    }  
+        
             /*pro_group_top*/
         .pro_content .pro_group_top ul {
             position: relative;
@@ -414,4 +928,347 @@ export default {
             }
             
         }
+        /*pro_part*/
+        .pro_content .pro_part {
+            position: relative;
+            padding-left: 0.4rem;
+            background: #fff;
+            font-size: 0.37333333rem;
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+            .pro_total {
+                padding: 0.26666667rem 3.14666667rem 0.26666667rem 0;
+                margin-bottom: 0.26666667rem;
+                background: #fff;
+                .pro_total_price {
+                    font-size: 0.42666667rem;
+                    color: #666;
+                    span {
+                    color: #FF6666;
+                    font-size: 0.48rem;
+                }
+                }
+                .pro_original_price {
+                    text-decoration: line-through;
+                    color: #999;
+                }
+                p {
+                    word-break: break-all;
+                }
+                p {
+                    line-height: 0.64rem;
+                }
+                .btn_default {
+                    position: absolute;
+                    top: 50%;
+                    right: 0.26666667rem;
+                    width: 2.88rem;
+                    height: 0.85333333rem;
+                    line-height: 0.85333333rem;
+                    margin-top: -0.42666667rem;
+                    font-size: 0.37333333rem;
+                    border-radius: 14px;
+                    text-align: center;
+                }
+                .btn_red {
+                    color: #FF6666;
+                    border: 1px solid #FF6666;
+                }
+                }
+        }
+        /*pro_list mt5*/
+        .pro_content .pro_list {
+            background: #fff;
+        }
+        .mt5 {
+            margin-top: 0.13333333rem;
+        }
+        .pro_content .pro_block {
+            padding: 0.26666667rem 0.4rem;
+            position: relative;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            border-bottom: 1px solid #e1e1e1;
+            .pro_item {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                flex: 1;
+                font-size: 0.37333333rem;
+            }
+            .color_gray {
+                color: #666;
+            }
+            .iconfont {
+                position: relative;
+                font-size: .53333333rem;
+                color: #ccc;
+            }
+        }
+        /*pro_part*/
+        .pro_content .pro_part {
+            position: relative;
+            padding-left: 0.4rem;
+            background: #fff;
+            font-size: 0.37333333rem;
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+            .send_to {
+                padding: 0.26666667rem 0;
+                margin-bottom: 0.26666667rem;
+                .iconfont {
+                    color: #FF6666;
+                }
+            }
+            p {
+                color: #828282;
+                padding: 0.26666667rem 0 0 1.2rem;
+            }
+        }
+        /*pro_review*/
+         .pro_content .pro_review {
+            padding-left: 0.26666667rem;
+            margin-bottom: 0.26666667rem;
+            background: #fff;
+            .pro_block {
+                padding: 0.26666667rem 0.26666667rem 0.26666667rem 0;
+                .pro_item {
+                    -webkit-box-flex: 1;
+                    -webkit-flex: 1;
+                    flex: 1;
+                    font-size: 0.37333333rem;
+                }
+            }
+             .color_red {
+                    color: #FF6666;
+                }
+            .color_red:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 1.6rem;
+                height: 0.02666667rem;
+                background: #FF6666;
+            }
+            ul {
+                padding: 0 0.26666667rem 0.26666667rem 0;
+            }
+            li {
+                border-bottom: 1px solid #e1e1e1;
+                padding: 0.26666667rem 0;
+                 p {
+                    position: relative;
+                    line-height: 0.64rem;
+                    color: #020202;
+                    font-size: 0.37333333rem;
+                    word-break: break-all;
+                }
+                span {
+                    color: #828282;
+                }
+                i {
+                    color: #949494;
+                    padding: 0 0.13333333rem;
+                }
+                .pro_review_star {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    display: inline-block;
+                    overflow: hidden;
+                    width: 1.94666667rem;
+                    height: 0.29333333rem;
+                    margin-top: 0.13333333rem;
+                    background: url(../../images/star.png) repeat-x 0 -0.29333333rem;
+                    background-size: 0.4rem auto;
+                    .real_star {
+                        display: inline-block;
+                        height: 0.29333333rem;
+                        background: url(../../images/star.png) repeat-x 0 0;
+                        background-size: 0.4rem auto;
+                        vertical-align: top;
+                    }
+                    .stars_width5 {
+                        width: 100%;
+                    }
+                }
+            }
+             /*btn_more*/
+            .btn_more {
+                padding: 0 0 0.26666667rem 0;
+                text-align: center;
+                color: #828282;
+                span {
+                    color: #020202;
+                    display: inline-block;
+                }
+            }
+        }
+        .pro_content .pro_sider_tab {
+            position: relative;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            background: #fff;
+            padding: 0 0.26666667rem;
+            border-bottom: 1px solid #e1e1e1;
+            .pro_sider_item {
+                position: relative;
+                display: block;
+                -webkit-box-flex: 1;
+                -webkit-flex: 1;
+                flex: 1;
+                padding: 0.26666667rem;
+                font-size: 0.42666667rem;
+                text-align: center;
+            }
+            .pro_sider_item.active {
+                color: #FF6666;
+            }
+            .pro_sider_item.active:before {
+                content: '';
+                position: absolute;
+                left: 0.53333333rem;
+                right: 0.53333333rem;
+                bottom: 0;
+                height: 0.02666667rem;
+                background-color: #FF6666;
+            }
+            .pro_sider_item:after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 20%;
+                width: 0.02666667rem;
+                height: 60%;
+                background-color: #e1e1e1;
+            }
+        }
+        .pro_content .pro_tab_box {
+            margin-bottom: 0.26666667rem;
+             .list_ul {
+                position: relative;
+                width: 100%;
+                padding: 0.26666667rem 0 0 0.26666667rem;
+                background: #fff;
+                overflow: hidden;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                li {
+                    width: 33.333333%;
+                    margin-bottom: 0.26666667rem;
+                    float: left;
+                     a {
+                        border: 1px solid #f3f3f3;
+                        display: block;
+                        overflow: hidden;
+                        margin-right: 0.26666667rem;
+                    }
+                    .img_box {
+                        text-align: center;
+                        padding: 0.26666667rem;
+                        img {
+                            height: 1.76rem;
+                            text-align: center;
+                        }
+                    }
+                    .pro_name {
+                        font-size: 0.34666667rem;
+                        color: #333;
+                        padding: 0.13333333rem 0.13333333rem 0 0.13333333rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        height: 1rem;
+                    }
+                    .price {
+                        color: #F35448;
+                        font-size: 0.4rem;
+                        padding-top: 0.13333333rem;
+                        padding-left: 0.13333333rem;
+                    }
+                }
+            }
+        }
+    .pro_content .pro_notice {
+        position: relative;
+        height: 0.8rem;
+        line-height: 30px;
+        margin: 0 0.53333333rem;
+        padding: 5px 0;
+        color: #999;
+        font-size: 0.34666667rem;
+        text-align: center;
+    }
+    .pro_content .pro_notice:before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        content: '';
+        width: 100%;
+        margin-top: -0.02666667rem;
+        height: 0.05333333rem;
+        background: #000000;
+        opacity: 0.2;
+        -ms-transform: scaleY(0.5);
+        -moz-transform: scaleY(0.5);
+        -webkit-transform: scaleY(-0.5);
+        transform: scaleY(0.5);
+    }
+    .pro_content .pro_notice span {
+        position: relative;
+        background: #f5f5f5;
+        padding: 0 0.4rem;
+        display: inline-block;
+    }
+    .pro_content .pro_detail_tab {
+        position: relative;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        background: #fff;
+        padding: 0;
+        border-bottom: 1px solid #e1e1e1;
+        font-size: 0.42666667rem;
+        .pro_detail_item.active {
+            color: #FF6666;
+        }
+         .pro_detail_item {
+            position: relative;
+            display: block;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            padding: 0.26666667rem 0;
+            text-align: center;
+        }
+        .pro_detail_item.active:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 0.05333333rem;
+            background-color: #FF6666;
+        }
+    }
+    .pro_content .pro_detail .pro_detail_box {
+        background: #fff;
+        padding: 0.26666667rem 0.4rem;
+        margin-bottom: 0.26666667rem;
+    }
+    .detail_img img {
+        width: 100% !important;
+        height: auto !important;
+        display: block;
+    }
 </style>
+
