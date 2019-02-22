@@ -4,7 +4,7 @@
        <head-top id="header">
                 <div slot="header-searchBar" class="header-searchBar">
                     <div class="logo"></div>
-                    <div class="address_map ellipsis" >上海</div>
+                    <div class="address_map ellipsis" @click = "gotoAddress({path: `/city`})">上海</div>
                     <div class="searchbar">
                         <a href="http://m.111.com.cn/yyw/wap/searchList/#/search" class="search_box">
                             <i class="icon iconfont icon-sousuo"></i>
@@ -908,6 +908,19 @@
                 <p>地址:广东省广州市越秀区共和西路1号2层</p>
             </div>
             <!-- page_bottom --> 
+            <!-- server_box -->
+            <div>
+                <div id="service_layer" class="server_gray_layer_bg"></div>
+                <div class="server_box">
+                    <div class="service_con">
+                        <span class="service_unit">售前</span>
+                        <span class="service_unit">企业采购</span>
+                        <span class="service_unit">药师</span>
+                        <span class="service_unit">售后</span>
+                    </div>
+                    <i class="service_ico"></i>
+                </div>
+            </div>
             <foot-guide></foot-guide>   
         </div> 
     </div>
@@ -921,12 +934,22 @@ import { Swipe,SwipeItem,Lazyload} from 'mint-ui';
 
 
 export default {
+    data(){
+            return{
+                
+            }
+        },
     components:{
         headTop,
         footGuide,
         Swipe,
         SwipeItem
-    }
+    },
+    methods: {
+        	gotoAddress(path){
+        		this.$router.push(path)
+        	}
+        },
 }
 </script>
 
@@ -1417,10 +1440,49 @@ img {
     font-size: .29333333rem;
     text-align: center;
 }
+ /*server_box*/
+.server_gray_layer_bg {
+    background: rgba(0,0,0,.3);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 90;
+    opacity: 0;
+    display: none;
+}
+.server_box, .service_ico {
+    width: 1.33333333rem;
+    height: 1.46666667rem;
+}
+.server_box {
+    position: fixed;
+    bottom: 2.77333333rem;
+    right: .5333333333333333rem;
+    z-index: 91;
+}
+.service_con {
+    position: absolute;
+    bottom: 1.75rem;
+    right: -.24rem;
+    width: 2.933333333333333rem;
+    background: #fff;
+    -webkit-border-radius: .066667rem;
+    border-radius: .066667rem;
+    display: none;
+}
+.service_ico {
+    z-index: 1000;
+    cursor: pointer;
+    display: inline-block;
+    background: url(../../images/service_ico.png) no-repeat;
+    background-size: contain;
+}
 </style>
 
 
-<style lang="scss">
+<style lang="scss" >
 /* swipe-indicator */
 .banner {
     .mint-swipe-indicators {

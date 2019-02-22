@@ -2,16 +2,16 @@
    <div id="cartDemand">
         <head-top id="cartDemandHeader" class="cart_common_header" goBack="true" commonMore="true">
                 <ul slot="cart_tab " class="common_tt_tab ">
-                    <li class="cur">
-                        <a href="">购物车</a>
+                    <li  :class='{activity_show: changeShowType =="cartDemand"}' @click="changeShowType='cartDemand'">
+                        <a>购物车</a>
                     </li>
-                     <li class>
-                        <a href="">需求清单</a>
+                     <li class :class='{activity_show: changeShowType =="demandList"}' @click="changeShowType='demandList'">
+                        <a>需求清单</a>
                     </li>
                 </ul> 
         </head-top>
-       <div id="cart">
-           <div class="page" style>
+       <div id="cart" v-show="changeShowType =='cartDemand'">
+           <div class="page">
                <div class="login_bar" style="display: none;"></div>
                <div class="cart_container">
                    <div class="cart_empty">
@@ -202,8 +202,6 @@
                                        <p class="pro_name">三九/999 感冒灵颗粒 10g*9袋</p>
                                        <span class="price">¥12.30</span>
                                    </li>
-
-                                   
                                </ul>
                            </div>
                        </div>
@@ -211,7 +209,19 @@
                </div>
            </div>
        </div>
-       <div id="demandList"></div>
+       <div id="demandList" v-show="changeShowType =='demandList'">
+           <div class="page">
+               <div class="demand_container demand_has_bottom_bar">
+                   <div class="cart_empty">
+                       <div class="cart_ico">
+                        <i class="icon iconfont icon-list"></i>
+                       </div>
+                       <p class="empty_warm">需求清单还是空的</p>
+                       <span class="see_btn">去看看</span>
+                   </div>
+               </div>
+           </div>
+       </div>
        <div></div>
    </div>
 </template>
@@ -220,9 +230,15 @@
 import headTop from '../../components/header/head'
 
 export default {
+    data(){
+        return{
+            changeShowType: 'cartDemand',//切换显示商品或者评价
+        }
+    },
+    
     components:{
         headTop
-    }
+    },
 }
 </script>
 
@@ -248,10 +264,10 @@ export default {
     }
     .cart_common_header .common_tt_tab {
         font-size: 0.42666667rem;
-    }
-    .cart_common_header .common_tt_tab .cur {
-        color: #FF6666;
-        border-bottom: 2px solid #FF6666;
+        .activity_show{
+                color: #FF6666;
+                border-bottom: 2px solid #FF6666;
+            }
     }
     .cart_common_header .common_tt_tab li {
         display: inline-block;
@@ -385,6 +401,13 @@ export default {
             color: #ccc;
         }
     }
+    /*demand*/
+    .demand_container {
+        padding-top: 1.1466666666666667rem;
+        }
+    .demand_has_bottom_bar {
+        padding-bottom: 1.4933333333333334rem;
+        }
 </style>
 
 

@@ -2,14 +2,14 @@
     <div class="page">
         <head-top goBack="true" commonMore="true" class="pro_header">
             <ul slot="item_tab" class="common_tt_tab">
-                <li class="cur">商品</li>
-                <li class>详情</li>
-                <li class>评价</li>
+                <li :class='{activity_show: changeShowType=="goods"}' @click="changeShowType='goods'">商品</li>
+                <li :class='{activity_show: changeShowType=="details"}' @click="changeShowType='details'">详情</li>
+                <li :class='{activity_show: changeShowType=="evaluation"}' @click="changeShowType='evaluation'">评价</li>
             </ul>
         </head-top>
         <!-- pro_content -->
         <div class="content pro_content">
-            <div>
+            <div v-show="changeShowType =='goods'">
                 <!-- pro_sider -->
                 <div class="pro_sider">
                     <div class>
@@ -195,12 +195,14 @@
                 </div>
                 <div style>
                     <div class="pro_sider_tab">
-                        <div class="pro_sider_item active">
+                        <div class="pro_sider_item" :class='{active: changeSiderType =="look"}' @click="changeSiderType =='look'">
                             看了又看
                         </div>
-                        <div class="pro_sider_item">品牌专区</div>
+                        <div class="pro_sider_item" :class='{active: changeSiderType =="brand"}' @click="changeSiderType =='brand'">
+                            品牌专区
+                        </div>
                     </div>
-                    <div class="pro_tab_box">
+                    <div class="pro_tab_box" v-show="changeSiderType=='look'">
                         <ul class="list_ul" style>
                              <mt-swipe :stopPropagation="true" :prevent="true" :auto="0" style="height: 356px;" class="swipe">
                                 <mt-swipe-item>
@@ -610,12 +612,43 @@
                             <span>继续上滑，加载图文详情</span>
                         </div>
                         <div class="pro_detail">
-                            <div class="pro_detail_tab">
-                                <div class="pro_detail_item active">图文详情</div>
-                                <div class="pro_detail_item">说明书</div>
-                                <div class="pro_detail_item">规格参数</div>
+                        <div class="pro_detail_tab">
+                            <div class="pro_detail_item" :class='{active: changeitemType=="graphic"}' @click="changeitemType='graphic'">图文详情</div>
+                            <div class="pro_detail_item" :class='{active: changeitemType=="instructions"}' @click="changeitemType='instructions'">说明书</div>
+                            <div class="pro_detail_item" :class='{active: changeitemType=="specification"}' @click="changeitemType='specification'">规格参数</div>
+                        </div>
+                        <div class="pro_detail_box" v-show="changeitemType=='graphic'">
+                            <div class="detail_img">
+                                <p>
+                                    <img src="https://p1.maiyaole.com/img/201604/29/20160429104001369.jpg" title="10.jpg" hspace="0" border="0" vspace="0">
+                                    <br>
+                                </p>
+                                <p>
+                                    <img title="2图片?±?" src="https://p1.maiyaole.com/img/201312/25/20131225141759413.jpg" >
+                                </p>
+                                <p>
+                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" border="0">
+                                    <img src="https://p1.maiyaole.com/img/201503/10/330_20150310174213305.jpg" border="0">
+                                    <img src="https://p1.maiyaole.com/img/201503/10/330_20150310174206613.jpg" border="0">
+                                    <img src="https://p1.maiyaole.com/img/201503/10/330_20150310174345346.jpg?a=2102299043" border="0">
+                                    <img src="https://p4.maiyaole.com/img/item/201806/05/org_20180605174720346.jpg" border="0">
+                                </p>
                             </div>
-                            <div class="pro_detail_box">
+                        </div>
+                    </div>
+            </div>
+                    </div>
+                </div>
+            </div>
+            <!-- details -->
+            <div style="overflow: hidden;" v-show="changeShowType =='details'">
+                <div class="pro_detail">
+                            <div class="pro_detail_tab">
+                                <div class="pro_detail_item" :class='{active: changeitemType=="graphic"}' @click="changeitemType='graphic'">图文详情</div>
+                                <div class="pro_detail_item" :class='{active: changeitemType=="instructions"}' @click="changeitemType='instructions'">说明书</div>
+                                <div class="pro_detail_item" :class='{active: changeitemType=="specification"}' @click="changeitemType='specification'">规格参数</div>
+                            </div>
+                            <div class="pro_detail_box" v-show="changeitemType=='graphic'">
                                 <div class="detail_img">
                                     <p>
                                         <img src="https://p1.maiyaole.com/img/201604/29/20160429104001369.jpg" title="10.jpg" hspace="0" border="0" vspace="0">
@@ -627,15 +660,17 @@
                                     <p>
                                         <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" border="0">
                                         <img src="https://p1.maiyaole.com/img/201503/10/330_20150310174213305.jpg" border="0">
-                                        <img src="https://p1.maiyaole.com/img/201503/10/330_20150310174206613.jpg" border="0">" border="0">
+                                        <img src="https://p1.maiyaole.com/img/201503/10/330_20150310174206613.jpg" border="0">
                                         <img src="https://p1.maiyaole.com/img/201503/10/330_20150310174345346.jpg?a=2102299043" border="0">
                                         <img src="https://p4.maiyaole.com/img/item/201806/05/org_20180605174720346.jpg" border="0">
                                     </p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+            </div>
+            <!-- evaluation -->
+            <div v-show="changeShowType =='evaluation'">
+                <div ckass="pro_detail_tab font_small"></div>
             </div>
         </div>
     </div>
@@ -644,6 +679,13 @@
 <script>
 import headTop from '../../components/header/head'
 export default {
+    data(){
+        return {
+            changeShowType: 'goods',
+            changeitemType: 'graphic',
+            changeSiderType: 'look'
+        }
+    },
     components:{
         headTop
     }
@@ -662,7 +704,7 @@ export default {
             width: 1.33333333rem;
             cursor: pointer; 
             }
-        .cur:after {
+        .activity_show:after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -1023,7 +1065,6 @@ export default {
             }
             p {
                 color: #828282;
-                padding: 0.26666667rem 0 0 1.2rem;
             }
         }
         /*pro_review*/
@@ -1124,11 +1165,10 @@ export default {
                 padding: 0.26666667rem;
                 font-size: 0.42666667rem;
                 text-align: center;
-            }
-            .pro_sider_item.active {
+                &.active {
                 color: #FF6666;
-            }
-            .pro_sider_item.active:before {
+                }
+                &.active:before {
                 content: '';
                 position: absolute;
                 left: 0.53333333rem;
@@ -1136,6 +1176,7 @@ export default {
                 bottom: 0;
                 height: 0.02666667rem;
                 background-color: #FF6666;
+                }
             }
             .pro_sider_item:after {
                 content: '';

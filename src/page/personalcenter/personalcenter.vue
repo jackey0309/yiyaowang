@@ -12,10 +12,10 @@
         <div class="user_info_wrapper">
             <div class="user_info_content">
                 <div class="user_header_icon">
-                    <img src="../../images/user_header_icon.png" alt="已登录头像">
+                    <img src="../../images/unlogin.png" alt="未登录头像">
                 </div>
                 <div class="user_name">
-                    <span>18271846039</span>
+                    <span  @click = "gotoAddress({path: `/login`})">登录/注册</span>
                 </div>
                 <div class="user_balance_content">
                     <div class="balance_item border">
@@ -142,10 +142,20 @@
 import headTop from '../../components/header/head'
 import footGuide from '../../components/footer/footGuide'
 export default {
+    data(){
+            return{
+                
+            }
+        },
       components:{
         headTop,
         footGuide
     },
+    methods: {
+        	gotoAddress(path){
+        		this.$router.push(path)
+        	}
+        },
 }
 </script>
 
