@@ -14,6 +14,7 @@
         <slot name="setting_area"></slot>
         <slot name="cart_tab "></slot>
         <slot name="item_tab"></slot>
+        <slot name="top_title"></slot>
     </header>  
 </template>
 
@@ -43,6 +44,7 @@ export default {
         left: 0.21333333rem;
         padding-left: 0.21333333rem;
         height: 100%;
+        line-height: 1.2rem;
         color: #999;
     }
     .icon-fanhui {

@@ -6,6 +6,7 @@ const cart = r => require.ensure([], () => r(require('../page/cart/cart')), 'car
 const category = r => require.ensure([], () => r(require('../page/category/category')), 'category')
 const personalcenter = r => require.ensure([], () => r(require('../page/personalcenter/personalcenter')), 'personalcenter')
 const item = r => require.ensure([], () => r(require('../page/item/item')), 'item')
+const login = r => require.ensure([], () => r(require('../page/login/login')), 'login')
 export default [{
     path: '/',
     component: App, //顶层路由，对应index.html
@@ -50,6 +51,12 @@ export default [{
             path: '/item',
             name: 'item',
             component: item
+        },
+         //登录/注册页
+         {
+            path: '/login',
+            name: 'login',
+            component: login
         },
        ]
     }]
