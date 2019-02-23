@@ -222,12 +222,13 @@
                </div>
            </div>
        </div>
-       <div></div>
+        <cart-foot></cart-foot>
    </div>
 </template>
 
 <script>
 import headTop from '../../components/header/head'
+import cartFoot from './children/cartFoot'
 
 export default {
     data(){
@@ -237,7 +238,8 @@ export default {
     },
     
     components:{
-        headTop
+        headTop,
+        cartFoot
     },
 }
 </script>
@@ -408,6 +410,7 @@ export default {
     .demand_has_bottom_bar {
         padding-bottom: 1.4933333333333334rem;
         }
+
 </style>
 
 

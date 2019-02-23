@@ -14,6 +14,12 @@
             </router-link>
         </li>
         <li>
+            <a href="https://m.111.com.cn/yyw/activities/fissionv2/#/index?activityNo=DIVISION7" data-ywpoint="0_0_0_activity_5_0" class="tab_bar_img">
+                <div class="tab_bar_box">
+                <img src="../../images/tab_bar_box.png"></div>
+            </a>
+            </li>
+        <li>
             <router-link to= "/cart" :class="$route.name==='cart'?'active':''">
                 <i :class="['icon','iconfont','icon_shopcar',$route.name==='cart'?'active':'']"></i>
                 <span class="tab_bar_name">购物车</span>
@@ -113,6 +119,32 @@ export default {
                 background-position: -8.42666667rem -1.58666667rem;
                 &.active{
                     background-position: -8.42666667rem -.24rem;
+                }
+            }
+            .tab_bar_img {
+                position: fixed;
+                left: 40%;
+                bottom: 0;
+                width: 20%;
+                height: 1.73333333rem;
+                z-index: 10;
+                padding: 0;
+                .tab_bar_box {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    margin: 0 auto;
+                }
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    width: auto;
+                    height: 100%;
+                    -webkit-transform: translate(-50%);
+                    -ms-transform: translate(-50%);
+                    transform: translate(-50%);
                 }
             }
     }

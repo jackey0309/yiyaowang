@@ -1,14 +1,14 @@
 <template>
     <div id="home" class="pre-home page">
          <div class="header_cover" style="opacity: 0; transition: all 0.5s ease 0s;"></div>
-       <head-top id="header">
+       <head-top id="head" class="header">
                 <div slot="header-searchBar" class="header-searchBar">
                     <div class="logo"></div>
                     <div class="address_map ellipsis" @click = "gotoAddress({path: `/city`})">上海</div>
                     <div class="searchbar">
                         <a href="http://m.111.com.cn/yyw/wap/searchList/#/search" class="search_box">
                             <i class="icon iconfont icon-sousuo"></i>
-                            输入商品名称
+                            <span class="shuru">输入商品名称</span>  
                         </a>
                     </div>
                     <a href="tel:4000070958" class="tel"></a> 
@@ -153,7 +153,16 @@
                 <div class="grab_top">
                     <p>
                         <span class="grab_time_left">距时间仅剩<i>|</i></span>
-                        <span class="grab_time">01:24:59</span>
+                        <span class="time">
+                            <span>0</span>
+                            <span>0</span>
+                            <span>:</span>
+                            <span>0</span>
+                            <span>0</span>
+                            <span>:</span>
+                            <span>0</span>
+                            <span>0</span>
+                        </span>
                     </p>
                     <a href=javascript:; class="grab_more">
                         <i class="icon iconfont icon-jiantouyou"></i>
@@ -909,29 +918,18 @@
             </div>
             <!-- page_bottom --> 
             <!-- server_box -->
-            <div>
-                <div id="service_layer" class="server_gray_layer_bg"></div>
-                <div class="server_box">
-                    <div class="service_con">
-                        <span class="service_unit">售前</span>
-                        <span class="service_unit">企业采购</span>
-                        <span class="service_unit">药师</span>
-                        <span class="service_unit">售后</span>
-                    </div>
-                    <i class="service_ico"></i>
-                </div>
-            </div>
+          <server-box></server-box>
             <foot-guide></foot-guide>   
         </div> 
     </div>
     
 </template>
-
 <script>
 import headTop from '../../components/header/head'
 import footGuide from '../../components/footer/footGuide'
 import { Swipe,SwipeItem,Lazyload} from 'mint-ui';
-
+import serverBox from './children/serverBox'
+import {search,downTime} from '../../../index.js'
 
 export default {
     data(){
@@ -943,13 +941,18 @@ export default {
         headTop,
         footGuide,
         Swipe,
-        SwipeItem
+        SwipeItem,
+        serverBox
     },
     methods: {
         	gotoAddress(path){
         		this.$router.push(path)
         	}
         },
+    mounted(){
+        search();
+        downTime();
+    }
 }
 </script>
 
@@ -977,11 +980,11 @@ export default {
         line-height: 1.2rem;
     }
    /* header */
-   #header{
+   .header{
         font-size: .4rem;
         text-align: center;
     }
-    #header{
+    .header{
         position: fixed;
         top: 0;
         left: 0;
@@ -993,13 +996,13 @@ export default {
         position: relative;
         text-align: left;
     }
-    #header .logo{
+    .header .logo{
         background: url(../../images/logo.png) no-repeat .4rem;
         left: 0;
         width: 1.33333333rem;
         background-size: auto .74666667rem; 
         }
-    #header .address_map{
+    .header .address_map{
         left: 1.2rem;
         padding-top: .10666667rem;
         width: 1.2rem;
@@ -1007,13 +1010,13 @@ export default {
         font-size: .37333333rem;
         color: #fff;
     }
-    #header .logo , #header .address_map{
+    .header .logo , .header .address_map{
         position: absolute;
         top: 0;
         height: .64rem;
         display: block;
     }
-    #header .searchbar{
+    .header .searchbar{
         padding: 0 1.73333333rem 0 2.4rem;
         color: #a7a7a7;
         .search_box{
@@ -1042,7 +1045,7 @@ export default {
             color: #898989;
             } 
     }
-    #header .tel {
+    .header .tel {
         position: absolute;
         top: 0;
         right: 0;
@@ -1130,7 +1133,7 @@ export default {
     }
 }
  .default_pic {
-        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUoAAAFKCAMAAABM9+Y3AAAAVFBMV…Oc7ShqUPi+YctvJQCZzO0QERERERERERERERERERER/bMXzfLKnjL9Py8AAAAASUVORK5CYII=) no-repeat 50%;
+        background: url(../../images/default_img.png) no-repeat 50%;
         background-size: 1.33333333rem auto;
     }
 img {
@@ -1217,7 +1220,7 @@ img {
     color: #e5e5e5;
     padding: 0 .26666667rem;
 }
-.content .grab_together .grab_top p .grab_time {
+.content .grab_together .grab_top p .time {
     color: #f56a60;
     font-size: .37333333rem;
 }
@@ -1441,44 +1444,7 @@ img {
     text-align: center;
 }
  /*server_box*/
-.server_gray_layer_bg {
-    background: rgba(0,0,0,.3);
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 90;
-    opacity: 0;
-    display: none;
-}
-.server_box, .service_ico {
-    width: 1.33333333rem;
-    height: 1.46666667rem;
-}
-.server_box {
-    position: fixed;
-    bottom: 2.77333333rem;
-    right: .5333333333333333rem;
-    z-index: 91;
-}
-.service_con {
-    position: absolute;
-    bottom: 1.75rem;
-    right: -.24rem;
-    width: 2.933333333333333rem;
-    background: #fff;
-    -webkit-border-radius: .066667rem;
-    border-radius: .066667rem;
-    display: none;
-}
-.service_ico {
-    z-index: 1000;
-    cursor: pointer;
-    display: inline-block;
-    background: url(../../images/service_ico.png) no-repeat;
-    background-size: contain;
-}
+
 </style>
 
 
