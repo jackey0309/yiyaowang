@@ -46,11 +46,11 @@ export default [{
             name: 'personalcenter',
             component: personalcenter
         },
-        //我的列表页
+        //产品列表页
         {
             path: '/item',
             name: 'item',
-            component: item
+            component: item    
         },
          //登录/注册页
          {
