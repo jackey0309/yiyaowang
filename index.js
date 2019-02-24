@@ -1,16 +1,13 @@
+
 export var search = function () {
     /*1.默认固定顶部透明背景*/
     var searchBox = document.querySelector('.header');
     var banner = document.querySelector('.banner');
+    var cover = document.querySelector('.header_cover');
     var height = banner.offsetHeight;
     /*监听页面滚动事件*/
     window.onscroll = function () {
-        /*console.log(document.body.scrollTop);
-         console.log(document.documentElement.scrollTop);
-         console.log(window.pageYOffset);*/
         var scrollTop = document.documentElement.scrollTop;
-        //console.log(scrollTop);
-        /*默认的透明度*/
         var opacity = 0;
         if (scrollTop < height) {
             /*2.当页面滚动的时候---随着页面卷曲的高度变大透明度变大*/
@@ -19,7 +16,7 @@ export var search = function () {
             /*3.当页面滚动的时候---超过某一个高度的时候透明度不变*/
             opacity = 0.85;
         }
-        searchBox.style.background = 'rgba(240,180,180,' + opacity + ')';
+        searchBox.style.background = 'rgba(245,220,220,' + opacity + ')';
     }
 };
 export var downTime = function () {
