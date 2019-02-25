@@ -917,12 +917,14 @@ import searchBar from '../../components/searchBar'
 import footGuide from '../../components/footer/footGuide'
 import { Swipe,SwipeItem,Lazyload} from 'mint-ui';
 import serverBox from './children/serverBox'
-import {search,downTime} from '../../../index.js'
+import {downTime} from '../../../index.js'
+import {currentcity, searchplace} from '../../service/getData'
 
 export default {
     data(){
         return{
               Status: false,
+             
         }
         },
     components:{
@@ -932,14 +934,9 @@ export default {
         SwipeItem,
         serverBox
     },
-    methods: {
-        	gotoAddress(path){
-        		this.$router.push(path)
-        	}
-        },
     mounted(){
-        downTime()
-        search()
+        downTime();
+         
     },
 }
 </script>

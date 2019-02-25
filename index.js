@@ -1,24 +1,3 @@
-
-export var search = function () {
-    /*1.默认固定顶部透明背景*/
-    var searchBox = document.querySelector('.header');
-    var banner = document.querySelector('.banner');
-    var cover = document.querySelector('.header_cover');
-    var height = banner.offsetHeight;
-    /*监听页面滚动事件*/
-    window.onscroll = function () {
-        var scrollTop = document.documentElement.scrollTop;
-        var opacity = 0;
-        if (scrollTop < height) {
-            /*2.当页面滚动的时候---随着页面卷曲的高度变大透明度变大*/
-            opacity = scrollTop / height * 0.85;
-        } else {
-            /*3.当页面滚动的时候---超过某一个高度的时候透明度不变*/
-            opacity = 0.85;
-        }
-        searchBox.style.background = 'rgba(245,220,220,' + opacity + ')';
-    }
-};
 export var downTime = function () {
     /*1.每一秒改变当前的时间*/
     /*2.倒数计时  假设 4小时*/

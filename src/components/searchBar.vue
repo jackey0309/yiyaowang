@@ -30,6 +30,11 @@ export default {
         required: true
       }
     },
+    methods: {
+        	gotoAddress(path){
+        		this.$router.push(path)
+        	}
+        },
 }
 </script>
 

@@ -28,3 +28,8 @@ export const groupcity = () => fetch('/v1/cities', {
 });
 
 
+/**
+ * 获取当前所在城市
+ */
+
+export const currentcity = number => fetch('/v1/cities/' + number);
