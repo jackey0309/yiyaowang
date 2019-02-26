@@ -27,9 +27,8 @@ export const groupcity = () => fetch('/v1/cities', {
 	type: 'group'
 });
 
-
 /**
- * 获取当前所在城市
+ * 获取msite页面食品分类列表
  */
 
-export const currentcity = number => fetch('/v1/cities/' + number);
+export const getHeadData = () => fetch('/v2/index_entry', {});

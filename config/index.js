@@ -53,6 +53,7 @@ module.exports = {
 //     }
         context: [ //代理路径
             '/v1', 
+            '/v2',
         ],
         // CSS Sourcemaps off by default because relative paths are "buggy"
         // with this option, according to the CSS-Loader README

@@ -14,7 +14,7 @@
                 <ul>
                     <span>
                         <li data-group="常用省份">常用省份</li>
-                        <router-link  tag="li" v-for="item in hotcity" :to="'/' + item.id" :key="item.id">
+                        <router-link  tag="li" v-for="item in hotcity" :to="'/'" :key="item.id">
                             {{item.name}}
                         </router-link>
                     </span>
@@ -24,7 +24,7 @@
                     </span>
                     <span v-for="(value, key, index) in sortgroupcity" :key="key" :ref="key">
                         <li  data-group="key">{{key}} </li> 
-                        <router-link  tag="li" v-for="item in value" :to="'/' + item.id" :key="item.id" class="ellipsis">
+                        <router-link  tag="li" v-for="item in value" :to="'/'" :key="item.id" class="ellipsis">
                             {{item.name}}
                         </router-link> 
                     </span>

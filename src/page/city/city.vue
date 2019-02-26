@@ -46,6 +46,7 @@ export default {
         //获取热门城市
         hotcity().then(res => {
             this.hotcity = res;
+            console.log( this.hotcity)
         })
 
         //获取所有城市

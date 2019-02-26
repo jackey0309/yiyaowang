@@ -5,35 +5,9 @@
         <div class="content">
                 <!-- swipe -->
             <mt-swipe :stopPropagation="true" :prevent="true" :auto="5000" class="banner">
-                <mt-swipe-item>
+                <mt-swipe-item v-for="(value, key, index) in banner" :key='key'>
                 <a href="">
-                    <img src="https://p2.maiyaole.com/img/mobile/20191/1549937031756182.jpg" alt="">
-                </a>
-                </mt-swipe-item>
-                <mt-swipe-item>
-                <a href="">
-                    <img src=" https://p1.maiyaole.com/img/mobile/20191/1550192661371188.jpg" alt="">
-                </a>
-                </mt-swipe-item>
-                <mt-swipe-item>
-                <a href="">
-                    <img src="https://p2.maiyaole.com/img/mobile/20191/1549937031756182.jpg" alt="">
-                </a>
-                </mt-swipe-item>
-                <mt-swipe-item>
-                <a href="">
-                    <img src=" https://p1.maiyaole.com/img/mobile/20191/1550192661371188.jpg" alt="">
-                </a>
-                </mt-swipe-item>
-                <mt-swipe-item>
-                <a href="">
-                    <img src="https://p2.maiyaole.com/img/mobile/20191/1549937031756182.jpg" alt="">
-                </a>
-                </mt-swipe-item>
-                <mt-swipe-item>
-                <a href="">
-                    <img src=" https://p1.maiyaole.com/img/mobile/20191/1550192661371188.jpg" alt="" lazy
-                            ="loaded">
+                    <img src="imgBaseUrl + '/'+ banner[key].pic" alt="">
                 </a>
                 </mt-swipe-item>
             </mt-swipe>
@@ -43,67 +17,11 @@
                 <div class="nav_menu nav_menu_two">
                     <div class="nav_inner">
                         <div class="nav_box">
-                            <a href="https://m.111.com.cn/maps/index.html?pageId=660&type=release" class="nav_item">
+                            <a v-for="(value, key, index) in contentList" :key='key' href="https://m.111.com.cn/maps/index.html?pageId=660&type=release" class="nav_item">
                                 <div class="nav_img">
-                                    <img src="https://p3.maiyaole.com/img/mobile/201810/1541953163405143.png" alt="">
+                                    <img :src="imgBaseUrl + '/'+ contentList[key].adPic" alt="">
                                 </div>
-                                <p>中西药品</p>
-                            </a>
-                            <a href="https://m.111.com.cn/maps/index.html?pageId=660&type=release" class="nav_item">
-                                <div class="nav_img">
-                                    <img src="https://p3.maiyaole.com/img/mobile/201810/1541953163405143.png" alt="">
-                                </div>
-                                <p>中西药品</p>
-                            </a>
-                            <a href="https://m.111.com.cn/maps/index.html?pageId=660&type=release" class="nav_item">
-                                <div class="nav_img">
-                                    <img src="https://p3.maiyaole.com/img/mobile/201810/1541953163405143.png" alt="">
-                                </div>
-                                <p>中西药品</p>
-                            </a>
-                            <a href="https://m.111.com.cn/maps/index.html?pageId=660&type=release" class="nav_item">
-                                <div class="nav_img">
-                                    <img src="https://p3.maiyaole.com/img/mobile/201810/1541953163405143.png" alt="">
-                                </div>
-                                <p>中西药品</p>
-                            </a>
-                            <a href="https://m.111.com.cn/maps/index.html?pageId=660&type=release" class="nav_item">
-                                <div class="nav_img">
-                                    <img src="https://p3.maiyaole.com/img/mobile/201810/1541953163405143.png" alt="">
-                                </div>
-                                <p>中西药品</p>
-                            </a>
-                        </div>
-                        <div class="nav_box">
-                            <a href="https://m.111.com.cn/maps/index.html?pageId=660&type=release" class="nav_item">
-                                <div class="nav_img">
-                                    <img src="https://p3.maiyaole.com/img/mobile/201810/1541953163405143.png" alt="">
-                                </div>
-                                <p>中西药品</p>
-                            </a>
-                            <a href="https://m.111.com.cn/maps/index.html?pageId=660&type=release" class="nav_item">
-                                <div class="nav_img">
-                                    <img src="https://p3.maiyaole.com/img/mobile/201810/1541953163405143.png" alt="">
-                                </div>
-                                <p>中西药品</p>
-                            </a>
-                            <a href="https://m.111.com.cn/maps/index.html?pageId=660&type=release" class="nav_item">
-                                <div class="nav_img">
-                                    <img src="https://p3.maiyaole.com/img/mobile/201810/1541953163405143.png" alt="">
-                                </div>
-                                <p>中西药品</p>
-                            </a>
-                            <a href="https://m.111.com.cn/maps/index.html?pageId=660&type=release" class="nav_item">
-                                <div class="nav_img">
-                                    <img src="https://p3.maiyaole.com/img/mobile/201810/1541953163405143.png" alt="">
-                                </div>
-                                <p>中西药品</p>
-                            </a>
-                            <a href="https://m.111.com.cn/maps/index.html?pageId=660&type=release" class="nav_item">
-                                <div class="nav_img">
-                                    <img src="https://p3.maiyaole.com/img/mobile/201810/1541953163405143.png" alt="">
-                                </div>
-                                <p>中西药品</p>
+                                <p>{{contentList[key].adTitle}}</p>
                             </a>
                         </div>
                     </div>
@@ -915,15 +833,20 @@
 <script>
 import searchBar from '../../components/searchBar'
 import footGuide from '../../components/footer/footGuide'
-import { Swipe,SwipeItem,Lazyload} from 'mint-ui';
+import { Swipe,SwipeItem,Lazyload} from 'mint-ui'
 import serverBox from './children/serverBox'
 import {downTime} from '../../../index.js'
-import {currentcity, searchplace} from '../../service/getData'
+import {getHeadData} from '../../service/getData'
+// import {imgBaseUrl} from 'src/config/env'
 
 export default {
     data(){
         return{
-              Status: false,
+            Status: false,
+            banner:[],
+            notice: [],
+            contentList: [],
+            imgBaseUrl: 'http://pngipye4r.bkt.clouddn.com', //图片域名地址
              
         }
         },
@@ -936,7 +859,15 @@ export default {
     },
     mounted(){
         downTime();
-         
+        getHeadData().then(res => {
+            const data = res[0].data
+            console.log(res)
+            this.banner = data.banner
+            this.notice = data.notice
+            this.contentList = data.templatedata[0].contentList
+            // console.log(this.contentList[0].adPic)
+
+        })
     },
 }
 </script>
