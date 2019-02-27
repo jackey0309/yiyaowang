@@ -1,140 +1,142 @@
 <template>
-    <div id="main" class="user_page">
-        <!-- user_top -->
-            <head-top id="user_top">
-                    <span slot="city_area" class="city_area"> 
-                        <img src="../../images/city_area.png" alt="定位">
-                        湖北
-                    </span>
-                    <span slot="setting_area" class="setting_area">设置</span>
-            </head-top>
-        <!-- user_info_wrapper -->
-        <div class="user_info_wrapper">
-            <div class="user_info_content">
-                <div class="user_header_icon">
-                    <img src="../../images/unlogin.png" alt="未登录头像">
-                </div>
-                <div class="user_name">
-                    <span  @click = "gotoAddress({path: `/login`})">登录/注册</span>
-                </div>
-                <div class="user_balance_content">
-                    <div class="balance_item border">
-                        <div class="msg_item">
-                            <span class="num">0.00</span>
-                            <span>元</span>
-                            <br>
-                            <span>余额</span>
-                        </div>
+    <div id="app">
+        <div id="main" class="user_page">
+            <!-- user_top -->
+                <head-top id="user_top">
+                        <span slot="city_area" class="city_area"> 
+                            <img src="../../images/city_area.png" alt="定位">
+                            湖北
+                        </span>
+                        <span slot="setting_area" class="setting_area">设置</span>
+                </head-top>
+            <!-- user_info_wrapper -->
+            <div class="user_info_wrapper">
+                <div class="user_info_content">
+                    <div class="user_header_icon">
+                        <img src="../../images/unlogin.png" alt="未登录头像">
                     </div>
-                    <div class="balance_item">
-                         <div class="msg_item">
-                            <span class="num">0</span>
-                            <span>张</span>
-                            <br>
-                            <span>优惠券</span>
+                    <div class="user_name">
+                        <span  @click = "gotoAddress({path: `/login`})">登录/注册</span>
+                    </div>
+                    <div class="user_balance_content">
+                        <div class="balance_item border">
+                            <div class="msg_item">
+                                <span class="num">0.00</span>
+                                <span>元</span>
+                                <br>
+                                <span>余额</span>
+                            </div>
+                        </div>
+                        <div class="balance_item">
+                            <div class="msg_item">
+                                <span class="num">0</span>
+                                <span>张</span>
+                                <br>
+                                <span>优惠券</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- order_info_content -->
-        <div class="order_info_content">
-            <span class="order_title">我的订单</span>
-            <span class="check_all">查看全部
-                <img src="../../images/check_all.png" class="right">
-            </span>
-            <div class="clearfix"></div>
-            <ul class="item_wrapper border-bt">
-                <li>
-                    <i class="iconfont">
-                        <img src="../../images/dfukuan.png" alt="待付款">
-                    </i>
-                    <span class="item_desc">待付款</span>
-                </li>
-                <li>
-                    <i class="iconfont">
-                        <img src="../../images/dfahuo.png" alt="待发货">
-                    </i>
-                    <span class="item_desc">待发货</span>
-                </li>
-                <li>
-                    <i class="iconfont">
-                        <img src="../../images/dshouhuo.png" alt="待收货">
-                    </i>
-                    <span class="item_desc">待收货</span>
-                </li>
-                <li>
-                    <i class="iconfont">
-                        <img src="../../images/dpingjia.png" alt="待评价">
-                    </i>
-                    <span class="item_desc">待评价</span>
-                </li>
-                 <li>
-                    <i class="iconfont">
-                        <img src="../../images/tuihuan.png" alt="退换货">
-                    </i>
-                    <span class="item_desc">退换货</span>
-                </li>
-            </ul>
-        </div>
-        <!-- server_content -->
-        <div class="server_content">
-            <div class="order_title">我的服务</div>
-             <div class="clearfix"></div>
-             <ul class="item_wrapper">
-                  <li>
-                    <i class="iconfont">
-                        <img src="../../images/jiankuang.png" alt="健康档案">
-                    </i>
-                    <span class="item_desc">健康档案</span>
-                </li>
-                <li>
-                    <i class="iconfont">
-                        <img src="../../images/kanguo.png" alt="看过买过">
-                    </i>
-                    <span class="item_desc">看过买过</span>
-                </li>
-                <li>
-                    <i class="iconfont">
-                        <img src="../../images/shoucang.png" alt="我的收藏">
-                    </i>
-                    <span class="item_desc">我的收藏</span>
-                </li>
-                <li>
-                    <i class="iconfont">
-                        <img src="../../images/zixun.png" alt="咨询中心">
-                    </i>
-                    <span class="item_desc">咨询中心</span>
-                </li>
-             </ul>
-        </div>
-        <!-- vip_content -->
-        <div class="vip_content">
-            <img src="../../images/vip.png" alt="会员中心" class="vip_center_bg">
-            <div class="vip_title">1+会员</div>
-            <div class=vip_tip> 一年最多可省1040元</div>
-            <div class="vip_btn">立即加入</div>
-        </div>
-        <!-- benefit_content -->
-        <div class="benefit_content">
-            <span class="order_title">福利中心</span>
-            <div class="clearfix"></div>
-            <ul class="item_wrapper">
-                <li class="flex-fix">
-                     <i class="iconfont">
-                        <img src="../../images/lingquan.png" alt="领券中心">
-                    </i>
-                    <span class="item_desc">领券中心</span>
-                </li>
-                <li class="flex-fix">
-                     <i class="iconfont">
-                        <img src="../../images/lingjiang.png" alt="领奖励金">
-                    </i>
-                    <span class="item_desc">领奖励金</span>
-                </li>
-            </ul>
-        </div>
-        <foot-guide></foot-guide>   
+            <!-- order_info_content -->
+            <div class="order_info_content">
+                <span class="order_title">我的订单</span>
+                <span class="check_all">查看全部
+                    <img src="../../images/check_all.png" class="right">
+                </span>
+                <div class="clearfix"></div>
+                <ul class="item_wrapper border-bt">
+                    <li>
+                        <i class="iconfont">
+                            <img src="../../images/dfukuan.png" alt="待付款">
+                        </i>
+                        <span class="item_desc">待付款</span>
+                    </li>
+                    <li>
+                        <i class="iconfont">
+                            <img src="../../images/dfahuo.png" alt="待发货">
+                        </i>
+                        <span class="item_desc">待发货</span>
+                    </li>
+                    <li>
+                        <i class="iconfont">
+                            <img src="../../images/dshouhuo.png" alt="待收货">
+                        </i>
+                        <span class="item_desc">待收货</span>
+                    </li>
+                    <li>
+                        <i class="iconfont">
+                            <img src="../../images/dpingjia.png" alt="待评价">
+                        </i>
+                        <span class="item_desc">待评价</span>
+                    </li>
+                    <li>
+                        <i class="iconfont">
+                            <img src="../../images/tuihuan.png" alt="退换货">
+                        </i>
+                        <span class="item_desc">退换货</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- server_content -->
+            <div class="server_content">
+                <div class="order_title">我的服务</div>
+                <div class="clearfix"></div>
+                <ul class="item_wrapper">
+                    <li>
+                        <i class="iconfont">
+                            <img src="../../images/jiankuang.png" alt="健康档案">
+                        </i>
+                        <span class="item_desc">健康档案</span>
+                    </li>
+                    <li>
+                        <i class="iconfont">
+                            <img src="../../images/kanguo.png" alt="看过买过">
+                        </i>
+                        <span class="item_desc">看过买过</span>
+                    </li>
+                    <li>
+                        <i class="iconfont">
+                            <img src="../../images/shoucang.png" alt="我的收藏">
+                        </i>
+                        <span class="item_desc">我的收藏</span>
+                    </li>
+                    <li>
+                        <i class="iconfont">
+                            <img src="../../images/zixun.png" alt="咨询中心">
+                        </i>
+                        <span class="item_desc">咨询中心</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- vip_content -->
+            <div class="vip_content">
+                <img src="../../images/vip.png" alt="会员中心" class="vip_center_bg">
+                <div class="vip_title">1+会员</div>
+                <div class=vip_tip> 一年最多可省1040元</div>
+                <div class="vip_btn">立即加入</div>
+            </div>
+            <!-- benefit_content -->
+            <div class="benefit_content">
+                <span class="order_title">福利中心</span>
+                <div class="clearfix"></div>
+                <ul class="item_wrapper">
+                    <li class="flex-fix">
+                        <i class="iconfont">
+                            <img src="../../images/lingquan.png" alt="领券中心">
+                        </i>
+                        <span class="item_desc">领券中心</span>
+                    </li>
+                    <li class="flex-fix">
+                        <i class="iconfont">
+                            <img src="../../images/lingjiang.png" alt="领奖励金">
+                        </i>
+                        <span class="item_desc">领奖励金</span>
+                    </li>
+                </ul>
+            </div>
+             <foot-guide></foot-guide>
+        </div> 
     </div>
 </template>
 

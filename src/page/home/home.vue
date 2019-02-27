@@ -7,7 +7,7 @@
             <mt-swipe :stopPropagation="true" :prevent="true" :auto="5000" class="banner">
                 <mt-swipe-item v-for="(value, key, index) in banner" :key='key'>
                 <a href="">
-                    <img src="imgBaseUrl + '/'+ banner[key].pic" alt="">
+                    <img :src="imgBaseUrl + banner[key].pic" alt="">
                 </a>
                 </mt-swipe-item>
             </mt-swipe>
@@ -19,16 +19,14 @@
                         <div class="nav_box">
                             <a v-for="(value, key, index) in contentList" :key='key' href="https://m.111.com.cn/maps/index.html?pageId=660&type=release" class="nav_item">
                                 <div class="nav_img">
-                                    <img :src="imgBaseUrl + '/'+ contentList[key].adPic" alt="">
+                                    <img :src="imgBaseUrl + contentList[key].adPic" alt="">
                                 </div>
                                 <p>{{contentList[key].adTitle}}</p>
                             </a>
                         </div>
                     </div>
                     <div class="nav_img_bg default_pic">
-                            <img src="https://p2.maiyaole.com/img/mobile/20191/1549937409153102.jpg" alt="" lazy
-                            ="loaded"
-                            >
+                            <img :src="imgBaseUrl + bgcPic0">
                         </div>
                 </div>
             </div>
@@ -37,7 +35,7 @@
             <div class="floor">
                 <div class="activity_model default_img mb10">
                     <a href="https://m.111.com.cn/maps/index.html?pageId=1585&type=release">
-                        <img src="https://p1.maiyaole.com/img/mobile/20191/1549937376922101.jpg" alt="">
+                        <img :src="imgBaseUrl + bgcPic1" >
                     </a>
                 </div>
             </div>
@@ -46,8 +44,8 @@
             <div class="news_model">
                 <div id="rollBox" class="news_model_box">
                     <div id="rollText" class="news_model_text">
-                        <div class="news_model_content">
-                            <a href="https://m.111.com.cn/maps/index.html?pageId=1581&type=release">健康优享，新春撞上爱</a>
+                        <div class="news_model_content roll">
+                            <a v-for="item in notice" :key='item.id' href="https://m.111.com.cn/maps/index.html?pageId=1581&type=release">{{item.title}}</a>
                         </div>
                     </div>
                 </div>
@@ -77,60 +75,12 @@
                 </div>
                 <div class="grab_list">
                     <ul id="list_ul_box" class="list_ul">
-                        <li>
+                        <li v-for="item in grabTogether.mobileFlashSaleNewItems" :key="item.id">
                             <div class="img_box default_pic">
-                                <img src="https://p4.maiyaole.com/img/item/201802/23/160_20180223142344315.jpg" lazy="loaded">
+                                <img :src="imgBaseUrl + item.mainimg3">
                             </div>
-                            <p class="pro_name">惠氏 钙尔奇 碳酸钙D3片 100片</p>
-                            <p class="price">¥87</p>
-                        </li>
-                        <li>
-                            <div class="img_box default_pic">
-                                <img src="https://p4.maiyaole.com/img/item/201802/23/160_20180223142344315.jpg" lazy="loaded">
-                            </div>
-                            <p class="pro_name">惠氏 钙尔奇 碳酸钙D3片 100片</p>
-                            <p class="price">¥87</p>
-                        </li>
-                        <li>
-                            <div class="img_box default_pic">
-                                <img src="https://p4.maiyaole.com/img/item/201802/23/160_20180223142344315.jpg" lazy="loaded">
-                            </div>
-                            <p class="pro_name">惠氏 钙尔奇 碳酸钙D3片 100片</p>
-                            <p class="price">¥87</p>
-                        </li>
-                        <li>
-                            <div class="img_box default_pic">
-                                <img src="https://p4.maiyaole.com/img/item/201802/23/160_20180223142344315.jpg" lazy="loaded">
-                            </div>
-                            <p class="pro_name">惠氏 钙尔奇 碳酸钙D3片 100片</p>
-                            <p class="price">¥87</p>
-                        </li>
-                        <li>
-                            <div class="img_box default_pic">
-                                <img src="https://p4.maiyaole.com/img/item/201802/23/160_20180223142344315.jpg" lazy="loaded">
-                            </div>
-                            <p class="pro_name">惠氏 钙尔奇 碳酸钙D3片 100片</p>
-                            <p class="price">¥87</p>
-                        </li>
-                        <li>
-                            <div class="img_box default_pic">
-                                <img src="https://p4.maiyaole.com/img/item/201802/23/160_20180223142344315.jpg" lazy="loaded">
-                            </div>
-                            <p class="pro_name">惠氏 钙尔奇 碳酸钙D3片 100片</p>
-                            <p class="price">¥87</p>
-                        </li>
-                        <li>
-                            <div class="img_box default_pic">
-                                <img src="https://p4.maiyaole.com/img/item/201802/23/160_20180223142344315.jpg" lazy="loaded">
-                            </div>
-                            <p class="pro_name">惠氏 钙尔奇 碳酸钙D3片 100片</p>
-                            <p class="price">¥87</p>
-                        </li>
-                        <li class="grab_all">
-                            <div class="grab_all_box">
-                                <span class="grab_all_title">查看全部</span>
-                                <i class="icon iconfont icon-jiantouyou"></i>
-                            </div>
+                            <p class="pro_name">{{item.flashSaleProductName}}</p>
+                            <p class="price">¥{{item.promotionPrice}}</p>
                         </li>
                     </ul>
                 </div>
@@ -141,14 +91,9 @@
             <mt-swipe :stopPropagation="true" :prevent="true" :auto="5000" >
                 <mt-swipe-item>
                 <a href="">
-                    <img src="https://p1.maiyaole.com/img/mobile/20191/1549985700025119.jpg" alt="">
+                    <img :src="imgBaseUrl + picurl">
                     </a>
                 </mt-swipe-item>
-                <mt-swipe-item>
-                <a href="">
-                    <img src=" https://p1.maiyaole.com/img/mobile/20191/1549985700025119.jpg" alt="">
-                </a>
-                </mt-swipe-item> 
             </mt-swipe>
             </div> 
             <!-- big_match --> 
@@ -157,664 +102,24 @@
                 <div class="good_top">
                     <p>精选专题</p>
                 </div>
-                <div class="good_list">
+                <div class="good_list" v-for="(value, key, index) in goodTopic" :key="key">
                     <div class="good_banner default_img">
                         <a href="https://m.111.com.cn/cmsPage/20186026040f0802104901/index.html">
-                            <img src="https://p1.maiyaole.com/img/mobile/201810/1542103312839101.jpg"  lazy="loaded">
+                            <img :src="imgBaseUrl + value.picUrl"  lazy="loaded">
                         </a>
                     </div>
                     <ul class="list_ul">
-                        <li>
+                        <li v-for="item in value.goodProducts" :key="item.id">
                             <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
                                 <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
+                                    <img :src="imgBaseUrl + item.productImg" alt="">
                                 </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
+                                <p class="pro_name">{{item.productName}}</p>
+                                <p class="price">¥{{item.sellPrice}}</p>
                             </a>
                         </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-
                     </ul>
                 </div>
-                 <div class="good_list">
-                    <div class="good_banner default_img">
-                        <a href="https://m.111.com.cn/cmsPage/20186026040f0802104901/index.html">
-                            <img src="https://p1.maiyaole.com/img/mobile/201810/1542103312839101.jpg"  lazy="loaded">
-                        </a>
-                    </div>
-                    <ul class="list_ul">
-                        <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                        
-                    </ul>
-                </div>
-                 <div class="good_list">
-                    <div class="good_banner default_img">
-                        <a href="https://m.111.com.cn/cmsPage/20186026040f0802104901/index.html">
-                            <img src="https://p1.maiyaole.com/img/mobile/201810/1542103312839101.jpg"  lazy="loaded">
-                        </a>
-                    </div>
-                    <ul class="list_ul">
-                        <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                        
-                    </ul>
-                </div>
-                 <div class="good_list">
-                    <div class="good_banner default_img">
-                        <a href="https://m.111.com.cn/cmsPage/20186026040f0802104901/index.html">
-                            <img src="https://p1.maiyaole.com/img/mobile/201810/1542103312839101.jpg"  lazy="loaded">
-                        </a>
-                    </div>
-                    <ul class="list_ul">
-                        <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                        
-                    </ul>
-                </div>
-                 <div class="good_list">
-                    <div class="good_banner default_img">
-                        <a href="https://m.111.com.cn/cmsPage/20186026040f0802104901/index.html">
-                            <img src="https://p1.maiyaole.com/img/mobile/201810/1542103312839101.jpg"  lazy="loaded">
-                        </a>
-                    </div>
-                    <ul class="list_ul">
-                        <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                        
-                    </ul>
-                </div>
-                 <div class="good_list">
-                    <div class="good_banner default_img">
-                        <a href="https://m.111.com.cn/cmsPage/20186026040f0802104901/index.html">
-                            <img src="https://p1.maiyaole.com/img/mobile/201810/1542103312839101.jpg"  lazy="loaded">
-                        </a>
-                    </div>
-                    <ul class="list_ul">
-                        <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                        
-                    </ul>
-                </div>
-                 <div class="good_list">
-                    <div class="good_banner default_img">
-                        <a href="https://m.111.com.cn/cmsPage/20186026040f0802104901/index.html">
-                            <img src="https://p1.maiyaole.com/img/mobile/201810/1542103312839101.jpg"  lazy="loaded">
-                        </a>
-                    </div>
-                    <ul class="list_ul">
-                        <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                        
-                    </ul>
-                </div>
-                 <div class="good_list">
-                    <div class="good_banner default_img">
-                        <a href="https://m.111.com.cn/cmsPage/20186026040f0802104901/index.html">
-                            <img src="https://p1.maiyaole.com/img/mobile/201810/1542103312839101.jpg"  lazy="loaded">
-                        </a>
-                    </div>
-                    <ul class="list_ul">
-                        <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                        
-                    </ul>
-                </div>
-                 <div class="good_list">
-                    <div class="good_banner default_img">
-                        <a href="https://m.111.com.cn/cmsPage/20186026040f0802104901/index.html">
-                            <img src="https://p1.maiyaole.com/img/mobile/201810/1542103312839101.jpg"  lazy="loaded">
-                        </a>
-                    </div>
-                    <ul class="list_ul">
-                        <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                         <li>
-                            <a href="http://m.111.com.cn/yyw/wap/item/#/item/50087960">
-                                <div class="img_box">
-                                    <img src="https://p1.maiyaole.com/img/item/201806/05/380_20180605174718138.jpg" alt="">
-                                </div>
-                                <p class="pro_name">马应龙 麝香痔疮膏 20g</p>
-                                <p class="price">¥15.8</p>
-                            </a>
-                        </li>
-                        
-                    </ul>
-                </div>
-
             </div>
             <!-- good_topic --> 
             <!-- page_bottom --> 
@@ -825,7 +130,14 @@
             <!-- page_bottom --> 
             <!-- server_box -->
           <server-box></server-box>
-            <foot-guide></foot-guide>   
+            <foot-guide>
+                <li slot="tab_bar_img">
+                    <a href= "/login" class="tab_bar_img">
+                        <div class="tab_bar_box" >
+                        <img :src="imgBaseUrl + bottombar.imgUrl"></div>
+                    </a>
+                </li>    
+            </foot-guide>   
         </div> 
     </div>
     
@@ -836,8 +148,8 @@ import footGuide from '../../components/footer/footGuide'
 import { Swipe,SwipeItem,Lazyload} from 'mint-ui'
 import serverBox from './children/serverBox'
 import {downTime} from '../../../index.js'
-import {getHeadData} from '../../service/getData'
-// import {imgBaseUrl} from 'src/config/env'
+import {getHeadData,getTailData} from '../../service/getData'
+import {imgBaseUrl} from 'src/config/env'
 
 export default {
     data(){
@@ -846,8 +158,16 @@ export default {
             banner:[],
             notice: [],
             contentList: [],
-            imgBaseUrl: 'http://pngipye4r.bkt.clouddn.com', //图片域名地址
-             
+            imgBaseUrl: imgBaseUrl,
+            // imgBaseUrl: 'http://pngipye4r.bkt.clouddn.com/', //图片域名地址
+            bigMatch: [],
+            bottombar: {},
+            goodTopic: [],
+            grabTogether: {},
+            picurl: '',
+            activity_model: [],
+            bgcPic0: '',
+            bgcPic1: '',
         }
         },
     components:{
@@ -861,12 +181,27 @@ export default {
         downTime();
         getHeadData().then(res => {
             const data = res[0].data
-            console.log(res)
+            // console.log(res)
             this.banner = data.banner
             this.notice = data.notice
             this.contentList = data.templatedata[0].contentList
-            // console.log(this.contentList[0].adPic)
-
+            this.activity_model = data.activity_model
+            this.bgcPic0 = data.activity_model[0].bgcPic
+            this.bgcPic1 = data.activity_model[1].bgcPic
+        })
+        // fetch('/img/mobile/201810/1541953163405143.png').then(res => {
+        //     console.log(res)
+        // }
+        // )
+        getTailData().then(res => {
+            const data = res[0].data
+            console.log(res)
+            this.bigMatch = data.bigMatch
+            this.bottombar = data.bottombar
+            this.goodTopic = data.goodTopic
+            this.grabTogether= data.grabTogether
+            this.picurl = data.bigMatch[0].picurl
+            
         })
     },
 }
@@ -1031,6 +366,67 @@ img {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+@-webkit-keyframes roll {
+   0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    25% {
+       -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    30% {
+        -webkit-transform: translateY(-33%);
+        transform: translateY(-33%)
+    }
+    70% {
+            -webkit-transform: translateY(-33%);
+            transform: translateY(-33%)
+        }
+
+    75% {
+        -webkit-transform: translateY(-66%);
+        transform: translateY(-66%)
+    }
+    100% {
+         -webkit-transform: translateY(-66%);
+        transform: translateY(-66%)
+    }
+}
+
+@keyframes rollout {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    25% {
+       -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+    30% {
+        -webkit-transform: translateY(-33%);
+        transform: translateY(-33%)
+    }
+    70% {
+            -webkit-transform: translateY(-33%);
+            transform: translateY(-33%)
+        }
+
+    75% {
+        -webkit-transform: translateY(-66%);
+        transform: translateY(-66%)
+    }
+    100% {
+         -webkit-transform: translateY(-66%);
+        transform: translateY(-66%)
+    }
+}
+
+.content .news_model .roll {
+    -webkit-animation: rollout 6s;
+    animation: rollout 10s  linear 0s infinite
+}
+
 /* news_model */
 /* grab_together */
     /* grab_top */

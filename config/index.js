@@ -52,6 +52,7 @@ module.exports = {
 //         }
 //     }
         context: [ //代理路径
+            '/img',
             '/v1', 
             '/v2',
         ],

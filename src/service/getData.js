@@ -28,7 +28,13 @@ export const groupcity = () => fetch('/v1/cities', {
 });
 
 /**
- * 获取msite页面食品分类列表
+ * 获取轮播图等分类列表
  */
 
 export const getHeadData = () => fetch('/v2/index_entry', {});
+/**
+ * 获取goodTopic等分类列表
+ */
+
+export const getTailData = () => fetch('/v2/index_tail', {});
+

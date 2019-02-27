@@ -4,7 +4,7 @@
             <!-- header_bar -->
             <head-top id="categories_header_bar">
                     <div slot="header-searchBar" class="categories_header_con">
-                        <a href="javascript:void(0)" class="categories_header_left_btn">
+                        <a href="/" class="categories_header_left_btn">
                             <i class="logo"></i>
                         </a>
                         <span class="address_map">上海</span>

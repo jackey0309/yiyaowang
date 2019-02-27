@@ -13,12 +13,9 @@
                 <span class="tab_bar_name">找药</span>
             </router-link>
         </li>
-        <li>
-            <a href="https://m.111.com.cn/yyw/activities/fissionv2/#/index?activityNo=DIVISION7" data-ywpoint="0_0_0_activity_5_0" class="tab_bar_img">
-                <div class="tab_bar_box">
-                <img src="../../images/tab_bar_box.png"></div>
-            </a>
-            </li>
+        <slot name="tab_bar_img">
+        
+        </slot>
         <li>
             <router-link to= "/cart" :class="$route.name==='cart'?'active':''">
                 <i :class="['icon','iconfont','icon_shopcar',$route.name==='cart'?'active':'']"></i>
@@ -37,7 +34,10 @@
 
 <script>
 export default {
-   
+   props: {
+       bottombar: Array,
+       imgBaseUrl: String
+   }
 }
 </script>
 
