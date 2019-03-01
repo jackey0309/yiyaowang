@@ -16,7 +16,7 @@
                         <img src="../../images/unlogin.png" alt="未登录头像">
                     </div>
                     <div class="user_name">
-                        <span  @click = "gotoAddress({path: `/login`})">登录/注册</span>
+                        <span  @click = "gotoAddress({path: `/quicklogin`})">登录/注册</span>
                     </div>
                     <div class="user_balance_content">
                         <div class="balance_item border">

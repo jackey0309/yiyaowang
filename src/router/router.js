@@ -7,6 +7,9 @@ const category = r => require.ensure([], () => r(require('../page/category/categ
 const personalcenter = r => require.ensure([], () => r(require('../page/personalcenter/personalcenter')), 'personalcenter')
 const item = r => require.ensure([], () => r(require('../page/item/item')), 'item')
 const login = r => require.ensure([], () => r(require('../page/login/login')), 'login')
+const quicklogin = r => require.ensure([], () => r(require('../page/quicklogin/quicklogin')), 'quicklogin')
+const test = r => require.ensure([], () => r(require('../page/test')), 'test')
+
 export default [{
     path: '/',
     component: App, //顶层路由，对应index.html
@@ -56,7 +59,22 @@ export default [{
          {
             path: '/login',
             name: 'login',
-            component: login
+            component: login,
+            children: [
+                
+            ]
+        },
+         //快速登录/注册页
+         {
+            path: '/quicklogin',
+            name: 'quicklogin',
+            component: quicklogin
+        },
+        //test
+        {
+            path: '/test',
+            name: 'test',
+            component: test
         },
        ]
     }]

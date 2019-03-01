@@ -4,15 +4,15 @@ import routes from './router/router'
 import store from './store/'
 import {routerMode} from './config/env'
 import './config/rem'
-import FastClick from 'fastclick'
+// import FastClick from 'fastclick'
 import './style/fonts/iconfont.css'
 import MintUI from 'mint-ui'
 
-if ('addEventListener' in document) {
-    document.addEventListener('DOMContentLoaded', function() {
-        FastClick.attach(document.body);
-    }, false);
-}
+// if ('addEventListener' in document) {
+//     document.addEventListener('DOMContentLoaded', function() {
+//         FastClick.attach(document.body);
+//     }, false);
+// }
 Vue.use(MintUI)
 //使用前端路由，当切换到新路由时，想要页面滚到顶部，或者是保持原先的滚动位置，就像重新加载页面那样。 vue-router 能做到，而且更好，它让你可以自定义路由切换时页面如何滚动。
 

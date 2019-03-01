@@ -14,7 +14,9 @@
         <slot name="setting_area"></slot>
         <slot name="cart_tab "></slot>
         <slot name="item_tab"></slot>
-        <slot name="top_title"></slot>
+        <section v-if="headTitle">
+            <span class="top_title">{{headTitle}}</span>
+        </section>
     </header>  
 </template>
 
@@ -65,6 +67,32 @@ export default {
     .icon-points {
         font-size: 0.53333333rem;
         color: #666;
+    }
+    .top_title {
+        display: block;
+        width: 100%;
+    }
+    .top_title {
+        font-size: .42666667rem;
+        font-weight: 500;
+        line-height: 1.2rem;
+        position: absolute;
+        padding: 0;
+        text-align: center;
+        color: #333;
+    }
+    .top_title {
+        right: 1.33333333rem;
+        left: 1.33333333rem;
+        display: inline-block;
+        width: auto;
+        margin: 0;
+        color: #333;
+    }
+     .top_title, button {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
 </style>
 

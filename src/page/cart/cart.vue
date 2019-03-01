@@ -12,7 +12,12 @@
         </head-top>
        <div id="cart" v-show="changeShowType =='cartDemand'">
            <div class="page">
-               <div class="login_bar" style="display: none;"></div>
+               <div class="login_bar" style="">
+                   <span class="bar_info">
+						登录后可同步电脑与手机购物车中的商品
+					</span> 
+                    <span class="login_btn">登录</span>
+                </div>
                <div class="cart_container">
                    <div class="cart_empty">
                        <div class="cart_ico">
@@ -284,6 +289,42 @@ export default {
         width: 100%;
     }
     /*login_bar*/
+    .login_bar {
+        height: 0.69333333rem;
+        line-height: 0.69333333rem;
+        width: 100%;
+        position: fixed;
+        top: 1.14666667rem;
+        left: 0;
+        background: #fff;
+        padding: 0.26666667rem 0;
+        font-size: 0.34666667rem;
+        z-index: 100;
+        .bar_info {
+            height: 0.72rem;
+            position: absolute;
+            left: 0.53333333rem;
+            color: #999;
+            display: inline-block;
+            padding-right: 2.13333333rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .login_btn {
+            width: 1.44rem;
+            height: 0.72rem;
+            display: inline-block;
+            color: #fff;
+            background: #FF6666;
+            text-align: center;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+            position: absolute;
+            right: 0.53333333rem;
+            top: 0.26666667rem;
+            cursor: pointer;
+        }
+    }
     /*cart_container*/
     .cart_container {
         padding-top: 1.1466666666666667rem;

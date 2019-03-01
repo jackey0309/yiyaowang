@@ -1,40 +1,32 @@
 <template>
 <div class="login">
     <div id="quickLogin" class="main">
-        <head-top id="Login" class="bar bar_nav" :head-title="loginWay? '账号密码登录':'免密码登录'" goBack="true">
+        <input type="text" name="username" style="display: none;">
+        <input type="password" name="password" style="display: none;" class="__web-inspector-hide-shortcut__">
+        <head-top id="Login" class="bar bar_nav" goBack="true">
+            <div slot="top_title" class="top_title">免密码登录</div>
         </head-top>
         <div class="login_page paddingTop ">
-              <div class="top_tip" v-if="!loginWay">
+            <div class="top_tip">
                 <p>新用户可通过快速登录注册账号</p>
             </div>
             <div class="v-content content">
                 <div class="item_control">
-                    <input type="text" placeholder="请输入账户名/手机号" v-model.lazy="userAccount"  class="item_input" @click="changeShowType='abled'">
+                    <!-- type=number比较费劲，而type=tel只需要监控每一次的结果就ok了。 -->
+                    <input type="tel" placeholder="请输入手机号" autocomplete="off" maxlength="11" class="item_input">
                     <i class="icon_clear show" style="display: none;"></i>
                 </div>
-                   <div class="item_control"  v-if="!loginWay">
-                    <input type="text" placeholder="请输入验证码" maxlength="4" v-model="codeNumber" class="item_input msg_code">
+                <div class="item_control">
+                    <input type="number" placeholder="请输入验证码" autocomplete="off" maxlength="4" class="item_input msg_code">
                     <i class="icon_clear show" style="display: none;"></i>
                     <button class="btn_code" @click="getCaptchaCode">
-                        <span v-show="changeType =='captcha'" @click="changeType='captchaCodeImg'">获取验证码</span>
-                        <img class="captchaImg" :src="captchaCodeImg" v-show="changeType =='captchaCodeImg'" @click="changeType='captchaCodeImg'">
+                        <span v-show="changeShowType =='captcha'" @click="changeShowType='captchaCodeImg'">获取验证码</span>
+                        <img class="captchaImg" :src="captchaCodeImg" v-show="changeShowType =='captchaCodeImg'" @click="changeShowType='captchaCodeImg'">
                     </button>
                 </div>
-                <div class="item_control" v-if="loginWay">
-                    <input type="password"  placeholder="请输入密码"  v-model="passWord"  class="item_input msg_code" @click="changeShowType='abled'">
-                    <i class="icon_clear show" style="display: none;"></i>
-                </div>
-                <div v-if="!loginWay">
-                <button  class="btn_default btn_red btn_block mt20" v-show="changeShowType =='abled'"  @click="quickAccountLogin">登录</button>
-                <button  disabled class="btn_default btn_red btn_block mt20" v-show="changeShowType =='disabled'">登录</button>
-                </div>
-                <div v-if="loginWay">
-                <button  class="btn_default btn_red btn_block mt20" v-show="changeShowType =='abled'"  @click="postAccountLogin">登录</button>
-                <button  disabled class="btn_default btn_red btn_block mt20" v-show="changeShowType =='disabled'">登录</button>
-                </div>
-                
+                <button disabled="disabled" class="btn_default btn_red btn_block mt20">登录</button>
                 <div class="item_box">
-                     <a class="fl blue-color"  @click="changeLoginWay">{{loginWay? "免密码登录":"账号密码登录"}}</a>
+                    <a class="fl blue-color">账号密码登录</a>
                 </div>
                 <div class="quick_login">
                     <div class="quick_top">
@@ -76,60 +68,29 @@
 
 <script>
 import headTop from '../../components/header/head'
-import {accountLogin,getcaptchas,quickLogin} from '../../service/getData'
-import {mapState, mapMutations} from 'vuex'
+ import {getcaptchas} from '../../service/getData'
 export default {
     data() {
         return {
-            userInfo: null, //获取到的用户信息
-            userAccount: null, //用户名
-            passWord: null, //密码
-            changeShowType: 'disabled',
-            loginWay: false, //登录方式，默认快速登录
             captchaCodeImg: null, //验证码地址
-             codeNumber: null, //验证码
-            changeType: 'captcha',
-            password: '88888888'
+            changeShowType: 'captcha',
         }
-    },
-    components:{
-        headTop,
     },
     created(){
             this.getCaptchaCode();
         },
-     methods: { 
-        ...mapMutations([
-            'RECORD_USERINFO',
-        ]),
-          //改变登录方式
-            changeLoginWay(){
-                this.loginWay = !this.loginWay;
-            },
-        async postAccountLogin(){
-            //用户名登录
-            this.userInfo = await accountLogin(this.userAccount, this.passWord);
-            if(this.userInfo.user_id) {
-                this.RECORD_USERINFO(this.userInfo);
-                this.$router.push('/cart');
-            }
-            },
+    components:{
+        headTop,
+    },
+    methods: { 
+        
         //获取验证吗，线上环境使用固定的图片，生产环境使用真实的验证码
         async getCaptchaCode(){
                 let res = await getcaptchas();
                 this.captchaCodeImg = res.code;
             },
-         async quickAccountLogin(){
-            //用户名登录
-            this.userInfo = await quickLogin(this.userAccount,this.password,this.codeNumber);
-            if(this.userInfo.user_id) {
-                this.RECORD_USERINFO(this.userInfo);
-                this.$router.push('/cart');
-            }
-            
     }
-    }
-}  
+}
 </script>
 
 <style lang="scss" scoped>
@@ -421,15 +382,14 @@ button.mt20 {
 button[disabled], html input[disabled] {
     cursor: default;
 }
-
-.btn_default {
-    border: 1px solid #ccc;
-    color: #ccc;
-}
 .btn_red {
     background: #f66;
     color: #fff;
     border-color: #f66;
+}
+.btn_default {
+    border: 1px solid #ccc;
+    color: #ccc;
 }
 .btn_block {
     display: block;
